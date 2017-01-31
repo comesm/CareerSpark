@@ -4,7 +4,7 @@
   "description": "sparking professional networks instantly",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha spec/dbSpec.js",
     "start": "nodemon server/index.js",
     "dev-react": "webpack -d --watch"
   },
@@ -28,6 +28,7 @@
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
+    "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "webpack": "^1.14.0"
   },

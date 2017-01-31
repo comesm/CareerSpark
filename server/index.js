@@ -4,7 +4,8 @@ var app = express();
 
 //import our controller for db operations, also connects to DB
 //var UserDbController = require('../db/controllers/Users.js');
-var ConnectionsDbController = require('../db/controllers/Connections.js');
+
+var ConnectionsDbController = require('../db/controllers/Controller.js');
 
 app.use(bodyParser.json());
 
