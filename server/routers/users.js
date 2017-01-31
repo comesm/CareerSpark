@@ -7,9 +7,42 @@ var db = require('../../db/controllers/Controller.js');
 
 // when URL ending is: .../api/users
 router.route('/')
+  // sends back an array of all users
   .get(function(req, res) {
-     // TO DO: sends back all users (?)
-     res.send('api users GET request');
+     db.findAllUsers(function(data) {
+     	res.send(data);
+     })
+  })
+  // posts new user
+  .post(function(req, res) {
+  	// sample data for now
+    // var user = {
+    //   phone:8675309,
+    //   username:'comesm',
+    //   tagline:'wowimcool',
+    //   firstName:'michael',
+    //   lastName:'comes',
+    //   location:'SF',
+    //   image:'td',
+    //   field:'engineering',
+    //   company:'HR'
+    // };
+
+    // db.addUser(user, function(result) {
+    //   res.send('POST NEW USER CALLED')
+    // });
+
+//   	var addUser = function(user, callback) {
+//   model.Users.create(user).save(function(result) {
+//     callback(result);
+//   });
+// }
+
+
+
+
+
+  	res.send('api users POST request');
   });
 
 // when URL ending is, e.g.: /api/users/14
