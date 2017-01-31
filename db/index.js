@@ -25,9 +25,11 @@ var Connections = sequelize.define('connections', {
     autoIncrement: true},
  });
 
-Connections.sync({force: true});
 
 Users.belongsToMany(Users, {as: 'Connection', through: Connections})
+
+Connections.sync({force: true});
+
 
 exports.Users = Users;
 exports.Connections = Connections;
