@@ -96,8 +96,6 @@ describe('Users', function() {
 
     describe('test our insert and delete operations', function() {
 
-
-
     })
 
   });
