@@ -2,19 +2,22 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-//import our controller for db operations, also connects to DB
-//var UserDbController = require('../db/controllers/Users.js');
+// import two routers
+var userRouter = require('./routers/users.js');
+var connectionRouter = require('./routers/connections.js');
 
-var ConnectionsDbController = require('../db/controllers/Controller.js');
 
 app.use(bodyParser.json());
 
-
-//interact here with db or add routes elsewhere to keep code modularized
-//hypothetically, db operations would be delegated to these routes
-
-
+// Serves up main page
 app.use('/', express.static(__dirname + '/../client/dist'));
+
+// URL ending for GET/POST requests for User (e.g., when creating new user)
+app.use('/api/users', userRouter);
+
+//URL ending for GET/POST requests for Connetions (e.g., when two users connect)
+app.use('/api/connections', connectionRouter);
+
 
 app.listen(3000, function() {
   console.log('listening on port 3000');
