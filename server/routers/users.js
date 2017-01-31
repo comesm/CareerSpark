@@ -15,34 +15,27 @@ router.route('/')
   })
   // posts new user
   .post(function(req, res) {
-  	// sample data for now
-    // var user = {
-    //   phone:8675309,
-    //   username:'comesm',
-    //   tagline:'wowimcool',
-    //   firstName:'michael',
-    //   lastName:'comes',
-    //   location:'SF',
-    //   image:'td',
-    //   field:'engineering',
-    //   company:'HR'
-    // };
+  	// To Do: should read data off of req
 
-    // db.addUser(user, function(result) {
-    //   res.send('POST NEW USER CALLED')
-    // });
+    // sample data for now
+    var user = {
+      phone:8675309,
+      username:'comesm',
+      tagline:'wowimcool',
+      firstName:'michael',
+      lastName:'comes',
+      location:'SF',
+      image:'td',
+      field:'engineering',
+      company:'HR'
+    };
 
-//   	var addUser = function(user, callback) {
-//   model.Users.create(user).save(function(result) {
-//     callback(result);
-//   });
-// }
+    db.addUser(user, function(result) {
+      res.send('POST NEW USER CALLED')
+    });
 
-
-
-
-
-  	res.send('api users POST request');
+    // ToDo: should handle error
+  	
   });
 
 // when URL ending is, e.g.: /api/users/14
