@@ -1,3 +1,5 @@
+VIEW THIS FILE IN RAW
+
 Necessities:
 Divide Roles (but more importantly, set achievable goals for each person)
 -aim for a DEMO - however bare bones - after each sprint
