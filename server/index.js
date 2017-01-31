@@ -3,7 +3,8 @@ var bodyParser = require('body-parser');
 var app = express();
 
 //import our controller for db operations, also connects to DB
-var UserDbController = require('../db/controllers/User.js');
+//var UserDbController = require('../db/controllers/Users.js');
+var ConnectionsDbController = require('../db/controllers/Connections.js');
 
 app.use(bodyParser.json());
 
