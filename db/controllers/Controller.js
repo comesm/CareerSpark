@@ -1,20 +1,54 @@
 var model = require('../index.js');
 
 //write our queries
-
+console.log(model);
 //retrieve all users
 
+var findAllUsers = function(callback) {
 
+  model.Users.findAll(function(result) {
+    callback(result);
+  })
+}
 
+var addConnection = function(myUserId, connectionId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: connectionId})
+      .save(function(result) {callback(result)});
+}
 
-//add a user
+var findAllUsersByCompany = function(company, callback) {
+  model.Users.findAll({where: {company: company }}).
+    then(function(results) {callback(results)});
+  }
 
-//delete a user
+var addUser = function(user, callback) {
+  model.Users.create(user).save(function(result) {
+    callback(result);
+  });
+}
 
-//add a user connection
+var deleteUser = function(userId, callback) {
+  model.Users.destroy({where: {userId: userId}}).then
+    (function(result) {callback(result)});
+}
 
-//fetch a users' connections
+var getConnections = function(userId, callback) {
+  model.Connections.findAll({where:  {userUserId:userId}})
+    .then(function(result) {callback(result)});
+}
 
-//fetch all users from specific company
+//delete a connection
+var deleteConnection = function(userId, connectionId, callback) {
+  model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
+}
 
-//fetch all users within area X with same interests
+var findAllUsersByLocation = function(location, callback) {
+  model.Users.findAll({where: {location: location}}).
+    then(function(results) {callback(results)});
+  }
+
+var findAllUsersByLocationAndField = function(location, field, callback) {
+  model.Users.findAll({where: {location: location, field: field}}).
+    then(function(results) {callback(results)});
+  }
