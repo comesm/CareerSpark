@@ -7,7 +7,7 @@ exports.findAllUsers = function(callback) {
   console.log('7')
   model.Users.findAll().then(function(result) {
     console.log('10', result);
-    // return callback(result);
+     return callback(result);
   }).error(function(err) {
     console.log('11', err);
   })
@@ -25,7 +25,8 @@ exports.findAllUsersByCompany = function(company, callback) {
 }
 
 exports.addUser = function(user, callback) {
-  model.Users.create(user).save(function(result) {
+  model.Users.create(user).then(function(result) {
+    console.log('29');
     callback(result);
   });
 }
