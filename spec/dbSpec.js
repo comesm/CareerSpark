@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var expect = require('chai').expect;
 var assert = require('assert');
 var controller = require('../db/controllers/Controller.js');
-var models = require('../db/index.js');
+//var models = require('../db/index.js');
 
 
   // userId: {primaryKey: true, type: Sequelize.INTEGER,
@@ -20,7 +20,7 @@ var models = require('../db/index.js');
 
 describe('Users', function() {
   beforeEach(function() {
-    models.Users.create({
+    controller.addUser({
       phone:8675309,
       username:'comesm',
       tagline:'wowimcool',
@@ -31,33 +31,26 @@ describe('Users', function() {
       field:'engineering',
       company:'HR'
 
-    }).then(function(result) {done()})
-      // .save(function() {
-      //   console.log('saved');
-      //   done(null);
-      //})
-      .error(function(error) {
-        done(error);
-      });
+    })
   });
 
-  // after(function() {
-  //   console.log('45');
-  //   models.Users.destroy({
-  //     where: {phone:8675309}
-  //   });
-  // });
+  after(function() {
+    console.log('45');
+    models.Users.destroy({
+      where: {phone:8675309}
+    });
+  });
 
 
     describe('fetch users', function() {
       console.log('53');
-      it('should return all added users', function() {
+      it('should return all added users', function(done) {
         console.log('55')
         controller.findAllUsers(function(results) {
           console.log('57', results);
           //return results;
           expect(results.phone).to.equal('blaslgs');
-
+          done();
         });
       })
     });
