@@ -3,9 +3,9 @@
 // //write our queries
 // //retrieve all users
 
-var findAllUsers = function(callback) {
+exports.findAllUsers = function(callback) {
 
-  model.Users.findAll(function(result) {
+  model.Users.findAll().then(function(result) {
     callback(result);
   })
 }
@@ -51,3 +51,4 @@ var findAllUsersByLocationAndField = function(location, field, callback) {
   model.Users.findAll({where: {location: location, field: field}}).
     then(function(results) {callback(results)});
   }
+
