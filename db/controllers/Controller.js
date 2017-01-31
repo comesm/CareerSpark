@@ -1,8 +1,7 @@
-var model = require('../index.js');
+ var model = require('../index.js');
 
-//write our queries
-console.log(model);
-//retrieve all users
+// //write our queries
+// //retrieve all users
 
 var findAllUsers = function(callback) {
 
