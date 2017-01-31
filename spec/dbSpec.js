@@ -22,7 +22,7 @@ describe('Users', function() {
   beforeEach(function() {
     controller.addUser({
       phone:8675309,
-      username:'comesm',
+      username:'testUserName',
       tagline:'wowimcool',
       firstName:'michael',
       lastName:'comes',
@@ -43,11 +43,8 @@ describe('Users', function() {
 
 
     describe('fetch users', function() {
-      console.log('53');
       it('should return all added users', function(done) {
-        console.log('55')
         controller.findAllUsers(function(results) {
-          console.log('57', results);
           //return results;
           expect(results.phone).to.equal('blaslgs');
           done();
