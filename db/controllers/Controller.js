@@ -1,4 +1,4 @@
- var model = require('../index.js');
+var model = require('../index.js');
 
 // //write our queries
 // //retrieve all users
