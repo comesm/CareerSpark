@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import User from './User.jsx';
+import red-x from '../'
 
 class App extends React.Component {
   constructor(props) {
