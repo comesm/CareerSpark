@@ -22,7 +22,7 @@ var findAllUsersByCompany = function(company, callback) {
     then(function(results) {callback(results)});
   }
 
-var addUser = function(user, callback) {
+exports.addUser = function(user, callback) {
   model.Users.create(user).save(function(result) {
     callback(result);
   });
