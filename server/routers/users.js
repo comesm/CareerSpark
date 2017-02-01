@@ -6,13 +6,13 @@ var db = require('../../db/controllers/Controller.js');
 
 // when URL ending is: .../api/users
 router.route('/')
-  // sends back an array of all users
+  // returns array of all users
   .get(function(req, res) {
      db.findAllUsers(function(data) {
      	res.send(data);
      })
   })
-  // posts new user, and stores profile image to server/assets
+  // posts new user, and stores profile image to server/assets. Returns user
   .post(function(req, res) {
 
     // The request body should look like a user.
@@ -49,14 +49,19 @@ router.route('/')
 
 // when URL ending is /api/users/<id>
 router.route('/:id')
+  // returns user by ID. *TO DO: Return error if no user found.
   .get(function(req, res) {
     var userId = req.url.slice(1);
-    db.findUserById(userId, function(data){
-      console.log('found')
-      console.log(data)
+    db.findUserById(userId, function(data) {
       res.send(data);
     })
-  	
-  });
+  })
+  // deletes user by ID *To Do: Return error if no user found.
+  .delete(function(req,res) {
+    var userId = req.url.slice(1);
+    db.deleteUser(userId, function(result) {
+      res.send(result);
+    })
+  })
 
 module.exports = router;

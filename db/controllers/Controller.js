@@ -30,7 +30,7 @@ exports.findAllUsersByLocationAndField = function(location, field, callback) {
 }
 
 exports.findAllUsersByCompany = function(company, callback) {
-  model.Users.findAll({where: {company: company }}).
+  model.Users.findAll({where: {company: company}}).
     then(function(results) {callback(results)});
 }
 
@@ -41,8 +41,11 @@ exports.addUser = function(user, callback) {
 }
 
 exports.deleteUser = function(userId, callback) {
-  model.Users.destroy({where: {userId: userId}}).then
-    (function(result) {callback(result)});
+  model.Users.destroy({
+    where: {
+      userId: userId
+    }
+  }).then(function(result) {callback(result)});
 }
 
 /****
