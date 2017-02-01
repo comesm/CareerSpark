@@ -2,8 +2,8 @@ var Sequelize = require('sequelize');
 var expect = require('chai').expect;
 var assert = require('assert');
 var controller = require('../db/controllers/Controller.js');
-console.log(controller);
 var models = require('../db/index.js');
+
 
   // userId: {primaryKey: true, type: Sequelize.INTEGER,
   //   autoIncrement: true},
@@ -19,10 +19,10 @@ var models = require('../db/index.js');
 
 
 describe('Users', function() {
-  before(function(done) {
-    models.Users.create({
+  beforeEach(function() {
+    return models.Users.create({
       phone:8675309,
-      username:'comesm',
+      username:'testUserName',
       tagline:'wowimcool',
       firstName:'michael',
       lastName:'comes',
@@ -31,22 +31,76 @@ describe('Users', function() {
       field:'engineering',
       company:'HR'
 
+    }).then(function() {
+      return models.Users.create({
+      phone:1234567,
+      username:'smartPerson12',
+      tagline:'hire me please',
+      firstName:'Tom',
+      lastName:'Smith',
+      location:'NJ',
+      image:'image path',
+      field:'teacher',
+      company:'UCSB'
+
     })
-      .save(function() {
-        console.log('saved');
-        done(null);
-      })
-      .error(function(error) {
-        done(error);
+    })
+  });
+
+  afterEach(function() {
+    models.Users.destroy({where:{}});
+  });
+
+
+
+    describe('test our query methods', function() {
+
+      it('should return 2 users', function(done) {
+        controller.findAllUsers(function(results) {
+          expect(results.length).to.equal(2);
+          done();
+        });
       });
+
+      it('first return should be michael', function(done) {
+
+        controller.findAllUsers(function(results) {
+          expect(results[0].dataValues.username).to.equal('comesm');
+          done();
+        });
+      })
+
+       it('should return Tom Smith', function(done) {
+        controller.findAllUsersByCompany('UCSB', function(results) {
+          console.log('75')
+          expect(results[0].dataValues.firstName).to.equal('Tom');
+          done();
+        });
+      });
+
+       it('should return Michael Comes', function(done) {
+        controller.findAllUsersByLocation('SF', function(results) {
+          console.log('75')
+          expect(results[0].dataValues.lastName).to.equal('comes');
+          done();
+        });
+      });
+
+      it('should return Michael Comes', function(done) {
+        controller.findAllUsersByLocationAndField('SF', 'engineering', function(results) {
+          console.log('75')
+          expect(results[0].dataValues.username).to.equal('comesm');
+          done();
+        });
+      });
+    });
+
+    describe('test our insert and delete operations', function() {
+
+    })
+
   });
 
-  describe('add User', function() {
-    controller.findAllUsers(function(result) {
-      console.log('46', result)
-    }
-    )
 
 
-  });
-});
+

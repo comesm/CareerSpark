@@ -18,17 +18,19 @@ var Users = sequelize.define('users', {
 });
 
 
-Users.sync({force: true});
 
 var Connections = sequelize.define('connections', {
   connectionId: {primaryKey: true, type: Sequelize.INTEGER,
     autoIncrement: true},
  });
 
+//join table initiate
+ Users.belongsToMany(Users, {as: 'Connection', through: Connections})
 
-Users.belongsToMany(Users, {as: 'Connection', through: Connections})
 
-Connections.sync({force: true});
+Users.sync();
+
+Connections.sync();
 
 
 exports.Users = Users;
