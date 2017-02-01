@@ -173,7 +173,10 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
+<<<<<<< 35f81129df3c3573616bcfc29246e2aa2d09e43e
 
+=======
+>>>>>>> finish tests for all tables
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
                  done();
@@ -212,10 +215,14 @@ describe('Users', function() {
       });
 
     });
+<<<<<<< 35f81129df3c3573616bcfc29246e2aa2d09e43e
   };
 
   };
   };
+=======
+  });
+>>>>>>> finish tests for all tables
 
 
 

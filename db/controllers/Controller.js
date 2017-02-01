@@ -46,6 +46,7 @@ exports.findUserByUserName = function(username, callback) {
 
 
 exports.findAllUsersByLocation = function(location, callback) {
+
   model.Users.findAll({
     where: {
       location: location
@@ -73,7 +74,6 @@ exports.findAllUsersByCompany = function(company, callback) {
 
 exports.addUser = function(user, callback) {
   model.Users.create(user).then(function(result) {
-
     callback(result);
   });
 }
@@ -141,6 +141,12 @@ exports.addConnection = function(myUserId, otherPersonId, callback) {
   model.Connections.create({userUserId: myUserId,
     ConnectionUserId: otherPersonId})
       .then(function(result) {callback(result)}).catch(function(err) {});
+}
+
+exports.addConnection = function(myUserId, otherPersonId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: otherPersonId})
+      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
 }
 
 exports.getConnections = function(userId, callback) {
