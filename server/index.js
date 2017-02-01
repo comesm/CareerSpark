@@ -13,14 +13,17 @@ app.use(bodyParser.json());
 // Serves up main page
 app.use('/', express.static(__dirname + '/../client/dist'));
 
-// Serves up static images. The URL ending will indicate the ID of the user.
-// To GET profile image for User 1, direct URL to http://localhost:3000/images/1.jpg
+// Serves up profile images
 app.use('/images', express.static(__dirname + '/../server/assets'))
+  // GET http://localhost:3000/images/1.jpg ==> returns image for user 1
 
-// URL ending for GET/POST requests for User (e.g., when creating new user)
+// URL ending for Users
 app.use('/api/users', userRouter);
+  // GET http://localhost:3000/api/users  ==> returns all users
+  // GET http://localhost:3000/api/users/1  ==> returns user 1 (without proile image)
+  // POST http://localhost:3000/api/users  ==> posts new user to database, saves image to storage
 
-//URL ending for GET/POST requests for Connetions (e.g., when two users connect)
+//URL ending for Connetions
 app.use('/api/connections', connectionRouter);
 
 

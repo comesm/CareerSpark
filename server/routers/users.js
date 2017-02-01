@@ -33,14 +33,8 @@ router.route('/')
 
     var user = req.body;
     var userImage = req.files.profile;
-
     // post user to db
     db.addUser(user, function(result) {
-      console.log('INSIDE ADD USER');
-      console.log('files ===> ');
-      console.log(req.files.profile);
-      console.log(result.userId);
-
       // store profile image in server/assets
       var userId = result.userId;
       userImage.mv('server/assets/'+ userId + '.jpg', function(err) {
@@ -53,15 +47,10 @@ router.route('/')
     });
   });
 
-// when URL ending is, e.g.: /api/users/14
+// when URL ending is /api/users/<id>
 router.route('/:id')
   .get(function(req, res) {
-  	// To Do: Sends back info on user 14.
-    console.log('testing GET function')
-    console.log(req.url);
-
     var userId = req.url.slice(1);
-
     db.findUserById(userId, function(data){
       console.log('found')
       console.log(data)
