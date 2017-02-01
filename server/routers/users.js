@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// import db Controllers
 var db = require('../../db/controllers/Controller.js');
-
 
 // when URL ending is: .../api/users
 router.route('/')
