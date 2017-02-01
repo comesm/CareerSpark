@@ -166,7 +166,6 @@ describe('Users', function() {
           });
          });
       });
-
     });
 
       it('should delete user', function(done) {
