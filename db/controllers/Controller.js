@@ -57,6 +57,10 @@ exports.addConnection = function(myUserId, connectionId, callback) {
       .then(function(result) {callback(result)});
 }
 
+exports.getAllConnections = function(callback) {
+  model.Connections.findAll().then(function(result) {callback(result)})
+}
+
 exports.getConnections = function(userId, callback) {
   model.Connections.findAll({where:  {userUserId:userId}})
     .then(function(result) {callback(result)});
