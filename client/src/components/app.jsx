@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import Header from './Header.jsx';
 import User from './User.jsx';
 // import $ from 'jquery';
 
@@ -49,11 +50,7 @@ export default class App extends React.Component {
   render() {
     return (
   	  <div>
-  	    <header>
-  	      <div id="header">CareerSpark</div>
-          <div id="sub-header">Supercharge Your Professional Network</div>
-        </header>
-
+  	    <Header />
         <img src="./images/red-x.png"
              alt="click to reject"
              className="user-choice red-x"
