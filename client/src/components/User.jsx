@@ -1,7 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
-
-import UserPhoto from './UserPhoto.jsx';
+import {render} from 'react-dom';
+import {UserPhoto} from './UserPhoto.jsx'; //may need {UserPhoto}
 
 export default class User extends React.Component {
   constructor(props) {
@@ -16,7 +15,9 @@ export default class User extends React.Component {
   	return (
   	  <section id="profile-component">
   	    <UserPhoto />
-  	    <article id="user-summary">Pithy user summary containing name, job, and general location here</article>
+  	    <article id="user-summary">
+          Pithy user summary containing name, job, and general location here
+        </article>
   	    <article id="user-description">
   	      Abraham Lincoln
   	      President
