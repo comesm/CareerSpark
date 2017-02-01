@@ -4,13 +4,19 @@ var model = require('../index.js');
 // //write our queries
 // //retrieve all users
 exports.findAllUsers = function(callback) {
-  console.log('7')
   model.Users.findAll().then(function(result) {
-    console.log('10', result);
-     return callback(result);
-  }).error(function(err) {
-    console.log('11', err);
+     callback(result);
   })
+}
+
+exports.findAllUsersByLocation = function(location, callback) {
+  model.Users.findAll({where: {location: location}}).
+    then(function(results) {callback(results)});
+}
+
+exports.findAllUsersByLocationAndField = function(location, field, callback) {
+  model.Users.findAll({where: {location: location, field: field}}).
+    then(function(results) {callback(results)});
 }
 
 exports.addConnection = function(myUserId, connectionId, callback) {
@@ -26,8 +32,7 @@ exports.findAllUsersByCompany = function(company, callback) {
 
 exports.addUser = function(user, callback) {
   model.Users.create(user).then(function(result) {
-    // console.log('User Posted');
-    // console.log('Result => ', result)
+    console.log(result);
     callback(result);
   });
 }
@@ -47,13 +52,5 @@ exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
 }
 
-exports.findAllUsersByLocation = function(location, callback) {
-  model.Users.findAll({where: {location: location}}).
-    then(function(results) {callback(results)});
-}
 
-exports.findAllUsersByLocationAndField = function(location, field, callback) {
-  model.Users.findAll({where: {location: location, field: field}}).
-    then(function(results) {callback(results)});
-}
 
