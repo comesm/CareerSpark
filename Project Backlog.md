@@ -34,7 +34,7 @@ Project Backlog (Ambitious Stretch goals):
 -Oath2.0 login
 -deployment
 -SSL
--Advanced schedule organizer/planner for planned/planning arrangements
+-Advanced schedule organizer/planner for planning future arrangements
 --date picker (https://www.codementor.io/chrisharrington/build-date-picker-react-js-classes-du107v566)
 -"Let this page track your location?"
 -google maps api integration to ui
