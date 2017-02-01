@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha spec/dbSpec.js",
     "start": "nodemon server/index.js",
-    "dev-react": "webpack -d --watch"
+    "dev-react": "webpack -d"
   },
   "repository": {
     "type": "git",
