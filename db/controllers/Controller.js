@@ -54,7 +54,7 @@ exports.deleteUser = function(userId, callback) {
 exports.addConnection = function(myUserId, connectionId, callback) {
   model.Connections.create({userUserId: myUserId,
     ConnectionUserId: connectionId})
-      .save(function(result) {callback(result)});
+      .then(function(result) {callback(result)});
 }
 
 exports.getConnections = function(userId, callback) {
