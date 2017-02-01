@@ -96,9 +96,53 @@ describe('Users', function() {
     });
 
     describe('test our insert and delete operations', function() {
+        var user =  {
+            phone:1121123,
+            username:'testUser',
+            tagline:'need a job',
+            firstName:'William',
+            lastName:'Jones',
+            location:'NM',
+            image:'image path',
+            field:'lawyer',
+            company:'Skadden Arps'
+          }
 
-    })
+      it('should return username of added user', function(done) {
 
+
+        controller.addUser(user, function() {
+          controller.findUserByUserName(user.username,
+            function(results) {
+              expect(results[0].dataValues.username).to.equal('testUser');
+              done();
+            })
+        });
+      })
+      it('should persist user', function(done) {
+
+        controller.addUser(user, function() {
+          controller.findAllUsers(function(results) {
+              expect(results.length).to.equal(3);
+              done();
+            });
+        });
+      });
+
+      it('should delete user', function(done) {
+
+          controller.getUserId('comesm', function(id) {
+              controller.deleteUser(id, function() {
+                controller.findAllUsers(function(results) {
+                  console.log('136------', results)
+                 expect(results.length).to.equal(1);
+                 expect(results[0].dataValues.username).to.equal('smartPerson12');
+                 done();
+                })
+              });
+            });
+        });
+    });
   });
 
 

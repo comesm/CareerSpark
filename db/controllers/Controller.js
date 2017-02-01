@@ -3,10 +3,21 @@ var model = require('../index.js');
 
 // //write our queries
 // //retrieve all users
+exports.getUserId = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).then(function(result) {
+     callback(result[0].dataValues.userId);
+  });
+}
+
 exports.findAllUsers = function(callback) {
   model.Users.findAll().then(function(result) {
      callback(result);
   })
+}
+
+exports.findUserByUserName = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).
+    then(function(results) {callback(results)});
 }
 
 exports.findAllUsersByLocation = function(location, callback) {
@@ -32,7 +43,7 @@ exports.findAllUsersByCompany = function(company, callback) {
 
 exports.addUser = function(user, callback) {
   model.Users.create(user).then(function(result) {
-    console.log(result);
+   // console.log(result);
     callback(result);
   });
 }
