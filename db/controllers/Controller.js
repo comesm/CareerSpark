@@ -1,9 +1,19 @@
 var model = require('../index.js');
 
 
+
 /****
 USER CONTROLLERS 
 ****/
+
+// //write our queries
+// //retrieve all users
+exports.getUserId = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).then(function(result) {
+     callback(result[0].dataValues.userId);
+  });
+}
+
 
 exports.findAllUsers = function(callback) {
   model.Users.findAll().then(function(result) {
@@ -11,12 +21,17 @@ exports.findAllUsers = function(callback) {
   })
 }
 
+
 exports.findUserById = function(id, callback) {
   model.Users.findOne({
     where: {
       userId: id
     }
   }).then(function(results) {callback(results)});
+
+exports.findUserByUserName = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).
+    then(function(results) {callback(results)});
 }
 
 exports.findAllUsersByLocation = function(location, callback) {
@@ -28,6 +43,7 @@ exports.findAllUsersByLocationAndField = function(location, field, callback) {
   model.Users.findAll({where: {location: location, field: field}}).
     then(function(results) {callback(results)});
 }
+
 
 exports.findAllUsersByCompany = function(company, callback) {
   model.Users.findAll({where: {company: company}}).
@@ -61,6 +77,12 @@ exports.getAllConnections = function(callback) {
   model.Connections.findAll().then(function(result) {callback(result)})
 }
 
+exports.addConnection = function(myUserId, otherPersonId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: otherPersonId})
+      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
+}
+
 exports.getConnections = function(userId, callback) {
   model.Connections.findAll({where:  {userUserId:userId}})
     .then(function(result) {callback(result)});
@@ -68,6 +90,7 @@ exports.getConnections = function(userId, callback) {
 
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
+    .then(function(deleted) {callback(deleted)});
 }
 
 
