@@ -57,7 +57,17 @@ router.route('/')
 router.route('/:id')
   .get(function(req, res) {
   	// To Do: Sends back info on user 14.
-  	res.send('To Do: fill in request');
+    console.log('testing GET function')
+    console.log(req.url);
+
+    var userId = req.url.slice(1);
+
+    db.findUserById(userId, function(data){
+      console.log('found')
+      console.log(data)
+      res.send(data);
+    })
+  	
   });
 
 module.exports = router;
