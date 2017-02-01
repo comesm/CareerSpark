@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 // Serves up main page
 app.use('/', express.static(__dirname + '/../client/dist'));
 
-// Serves up static images. To GET image 1, direct URL to http://localhost:3000/images/1.jpg
+// Serves up static images. The URL ending will indicate the ID of the user.
+// To GET profile image for User 1, direct URL to http://localhost:3000/images/1.jpg
 app.use('/images', express.static(__dirname + '/../server/assets'))
 
 // URL ending for GET/POST requests for User (e.g., when creating new user)
