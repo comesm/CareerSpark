@@ -26,7 +26,8 @@ exports.findAllUsersByCompany = function(company, callback) {
 
 exports.addUser = function(user, callback) {
   model.Users.create(user).then(function(result) {
-    console.log('29');
+    // console.log('User Posted');
+    // console.log('Result => ', result)
     callback(result);
   });
 }
