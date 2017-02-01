@@ -13,7 +13,6 @@ var models = require('../db/index.js');
   // firstName: Sequelize.STRING,
   // lastName: Sequelize.STRING,
   // location: Sequelize.STRING,
-  // image: Sequelize.BLOB,
   // field: Sequelize.STRING,
   // company: Sequelize.STRING
 
@@ -27,7 +26,6 @@ describe('Users', function() {
       firstName:'michael',
       lastName:'comes',
       location:'SF',
-      image:'td',
       field:'engineering',
       company:'HR'
 
@@ -39,7 +37,6 @@ describe('Users', function() {
       firstName:'Tom',
       lastName:'Smith',
       location:'NJ',
-      image:'image path',
       field:'teacher',
       company:'UCSB'
 

@@ -12,7 +12,6 @@ var Users = sequelize.define('users', {
   firstName: Sequelize.STRING,
   lastName: Sequelize.STRING,
   location: Sequelize.STRING,
-  image: Sequelize.BLOB,
   field: Sequelize.STRING,
   company: Sequelize.STRING
 });
