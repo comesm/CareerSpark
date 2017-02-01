@@ -122,7 +122,6 @@ describe('Users', function() {
             });
         });
       });
-
       it('should delete user', function(done) {
 
           controller.getUserId('comesm', function(id) {
@@ -168,7 +167,20 @@ describe('Users', function() {
       });
 
     });
+      it('should delete user', function(done) {
 
+          controller.getUserId('comesm', function(id) {
+              controller.deleteUser(id, function() {
+                controller.findAllUsers(function(results) {
+                  console.log('136------', results)
+                 expect(results.length).to.equal(1);
+                 expect(results[0].dataValues.username).to.equal('smartPerson12');
+                 done();
+                })
+              });
+            });
+        });
+    });
   });
 
 
