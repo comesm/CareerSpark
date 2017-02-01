@@ -1,12 +1,22 @@
 var model = require('../index.js');
 
 
-// //write our queries
-// //retrieve all users
+/****
+USER CONTROLLERS 
+****/
+
 exports.findAllUsers = function(callback) {
   model.Users.findAll().then(function(result) {
      callback(result);
   })
+}
+
+exports.findUserById = function(id, callback) {
+  model.Users.findOne({
+    where: {
+      userId: id
+    }
+  }).then(function(results) {callback(results)});
 }
 
 exports.findAllUsersByLocation = function(location, callback) {
@@ -17,12 +27,6 @@ exports.findAllUsersByLocation = function(location, callback) {
 exports.findAllUsersByLocationAndField = function(location, field, callback) {
   model.Users.findAll({where: {location: location, field: field}}).
     then(function(results) {callback(results)});
-}
-
-exports.addConnection = function(myUserId, connectionId, callback) {
-  model.Connections.create({userUserId: myUserId,
-    ConnectionUserId: connectionId})
-      .save(function(result) {callback(result)});
 }
 
 exports.findAllUsersByCompany = function(company, callback) {
@@ -41,12 +45,20 @@ exports.deleteUser = function(userId, callback) {
     (function(result) {callback(result)});
 }
 
+/****
+  Connection Controllers
+****/
+exports.addConnection = function(myUserId, connectionId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: connectionId})
+      .save(function(result) {callback(result)});
+}
+
 exports.getConnections = function(userId, callback) {
   model.Connections.findAll({where:  {userUserId:userId}})
     .then(function(result) {callback(result)});
 }
 
-//delete a connection
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
 }
