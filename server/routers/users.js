@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 // import db Controllers
 var db = require('../../db/controllers/Controller.js');
 
@@ -13,10 +12,10 @@ router.route('/')
      	res.send(data);
      })
   })
-  // posts new user, TO DO: Also upload their image to assets
+  // posts new user, and stores profile image to server/assets
   .post(function(req, res) {
 
-    // The request body should look like a user. If using Postman, don't forget to select body as JSON.
+    // The request body should look like a user.
     // Here's an example of a request body:
     // {
     //   "phone": 8675309,
@@ -25,12 +24,12 @@ router.route('/')
     //   "firstName": "michael",
     //   "lastName": "comes",
     //   "location": "SF",
-    //   "image": "td",
     //   "field": "engineering",
     //   "company": "HR",
     //   "updatedAt": "2017-01-31T23:33:15.000Z",
     //   "createdAt": "2017-01-31T23:33:15.000Z"
     // }
+    // The request should also include a file called "profile".
 
     var user = req.body;
     var userImage = req.files.profile;
