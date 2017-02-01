@@ -1,12 +1,13 @@
 var express = require('express');
+var fileUpload = require('express-fileupload');
 var bodyParser = require('body-parser');
 var app = express();
-
 // import two routers
 var userRouter = require('./routers/users.js');
 var connectionRouter = require('./routers/connections.js');
 
 
+app.use(fileUpload());
 app.use(bodyParser.json());
 
 // Serves up main page
