@@ -4,21 +4,20 @@ var db = require('../../db/controllers/Controller.js');
 
 // when URL ending is: .../api/connections
 router.route('/')
-  // TO DO: GET ALL CONNECTIONS
+  // returns all connections
   .get(function(req, res) {
      db.getAllConnections(function(data) {
      	res.send(data);
      })
   })
-  // TO DO: POST CONNECTIONS
+  // posts new connection, and returns it. *TO DO: error handling (e.g., when connection already exists)
   .post(function(req, res) {
   	console.log('post connection called');
   	console.log(req.body);
   	var userId1 = req.body.userId1;
   	var userId2 = req.body.userId2;
-  	db.addConnection(userId1,userId2, function() {
-  		console.log('added connection');
-  		res.send('POST CONNECTION SUCCESS')
+  	db.addConnection(userId1,userId2, function(result) {
+  		res.send(result.dataValues)
   	})
   	
   });
