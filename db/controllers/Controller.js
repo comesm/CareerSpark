@@ -3,10 +3,21 @@ var model = require('../index.js');
 
 // //write our queries
 // //retrieve all users
+exports.getUserId = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).then(function(result) {
+     callback(result[0].dataValues.userId);
+  });
+}
+
 exports.findAllUsers = function(callback) {
   model.Users.findAll().then(function(result) {
      callback(result);
   })
+}
+
+exports.findUserByUserName = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).
+    then(function(results) {callback(results)});
 }
 
 exports.findAllUsersByLocation = function(location, callback) {
@@ -19,11 +30,6 @@ exports.findAllUsersByLocationAndField = function(location, field, callback) {
     then(function(results) {callback(results)});
 }
 
-exports.addConnection = function(myUserId, connectionId, callback) {
-  model.Connections.create({userUserId: myUserId,
-    ConnectionUserId: connectionId})
-      .save(function(result) {callback(result)});
-}
 
 exports.findAllUsersByCompany = function(company, callback) {
   model.Users.findAll({where: {company: company }}).
@@ -32,7 +38,6 @@ exports.findAllUsersByCompany = function(company, callback) {
 
 exports.addUser = function(user, callback) {
   model.Users.create(user).then(function(result) {
-    console.log(result);
     callback(result);
   });
 }
@@ -42,14 +47,20 @@ exports.deleteUser = function(userId, callback) {
     (function(result) {callback(result)});
 }
 
+exports.addConnection = function(myUserId, otherPersonId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: otherPersonId})
+      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
+}
+
 exports.getConnections = function(userId, callback) {
   model.Connections.findAll({where:  {userUserId:userId}})
     .then(function(result) {callback(result)});
 }
 
-//delete a connection
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
+    .then(function(deleted) {callback(deleted)});
 }
 
 
