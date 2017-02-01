@@ -22,7 +22,7 @@ describe('Users', function() {
   beforeEach(function() {
     return models.Users.create({
       phone:8675309,
-      username:'comesm',
+      username:'testUserName',
       tagline:'wowimcool',
       firstName:'michael',
       lastName:'comes',
@@ -50,6 +50,7 @@ describe('Users', function() {
   afterEach(function() {
     models.Users.destroy({where:{}});
   });
+
 
 
     describe('test our query methods', function() {

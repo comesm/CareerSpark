@@ -15,27 +15,28 @@ router.route('/')
   })
   // posts new user
   .post(function(req, res) {
-  	// To Do: should read data off of req
 
-    // sample data for now
-    var user = {
-      phone:8675309,
-      username:'comesm',
-      tagline:'wowimcool',
-      firstName:'michael',
-      lastName:'comes',
-      location:'SF',
-      image:'td',
-      field:'engineering',
-      company:'HR'
-    };
+    // The request body should look like a user. If using Postman, don't forget to select body as JSON.
+    // Here's an example of a request body:
+    // {
+    //   "phone": 8675309,
+    //   "username": "RouteTesting",
+    //   "tagline": "wowimcool",
+    //   "firstName": "michael",
+    //   "lastName": "comes",
+    //   "location": "SF",
+    //   "image": "td",
+    //   "field": "engineering",
+    //   "company": "HR",
+    //   "updatedAt": "2017-01-31T23:33:15.000Z",
+    //   "createdAt": "2017-01-31T23:33:15.000Z"
+    // }
+
+    var user = req.body;
 
     db.addUser(user, function(result) {
-      res.send('POST NEW USER CALLED')
+      res.send(result)
     });
-
-    // ToDo: should handle error
-  	
   });
 
 // when URL ending is, e.g.: /api/users/14
