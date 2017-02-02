@@ -1,6 +1,8 @@
 import React from 'react';
-import { Header } from './Header.jsx';
+import Header from './Header.jsx';
 
-const Profile = () => <Header />
-
-export { Profile }
+export default class Profile extends React.Component {
+  render() {
+  	return <Header />
+  }
+}

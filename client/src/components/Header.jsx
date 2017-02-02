@@ -1,15 +1,16 @@
 import React from 'react'
-import App from './App.jsx';
+import Nav from './Nav.jsx';
 
-const Header = () => (
-  <div>
-    <header>
-      <div id="header">CareerSpark</div>
-      <div id="sub-header">Supercharge Your Professional Network</div>
-    </header>
-
-    <Nav />
-  </div>
-)
-
-export { Header }
+export default class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <header>
+          <div id="header">CareerSpark</div>
+          <div id="sub-header">Supercharge Your Professional Network</div>
+          <Nav />
+        </header>
+      </div>
+    )
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from 'react-dom';
-import { UserPhoto } from './UserPhoto.jsx'; //may need {UserPhoto}
+import { render } from 'react-dom';
+import UserPhoto from './UserPhoto.jsx'; //may need {UserPhoto}
 
 export default class User extends React.Component {
   constructor(props) {
