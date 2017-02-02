@@ -14,12 +14,11 @@ export default class App extends React.Component {
   	}
   }
 
-    render() {
+  render() {
     return (
   	  <div>
-  	<p>Blah, blah blah.</p>
+  	    <p>Blah, blah blah.</p>
   	  	<p>You talk too much.</p>
-
       </div>
     )
   }
