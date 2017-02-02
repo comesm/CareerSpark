@@ -1,13 +1,13 @@
-header {
+#header {
   text-align: center;
 }
 
-#Nav {
-  display: inline;
+#sub-header {
+  text-align: center;
+  font-style: italic;
 }
 
-#sub-header {
-  font-style: italic;
+header li {
 }
 
 .user-choice {

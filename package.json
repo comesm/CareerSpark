@@ -7,7 +7,8 @@
     "test": "mocha spec/dbSpec.js",
     "build": "webpack",
     "start": "nodemon server/index.js",
-    "dev-react": "webpack -d --watch"
+    "dev-react": "webpack -d --watch",
+    "dev-server": "webpack-dev-server --inline --content-base ."
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,8 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.3"
   },
   "dependencies": {
     "axios": "^0.15.3",

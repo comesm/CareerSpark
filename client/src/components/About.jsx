@@ -1,6 +1,8 @@
 import React from 'react';
-import { Header } from './Header.jsx';
+import Header from './Header.jsx';
 
-const About = () => <Header />
-
-export { About }
+export default class About extends React.Component {
+  render() {
+    return <Header />
+  }
+}
