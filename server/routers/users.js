@@ -47,13 +47,58 @@ router.route('/')
 
 // when URL ending is /api/users/<id>
 router.route('/:id')
-  // returns user by ID. *TO DO: Return error if no user found.
+  // returns data on user by ID. *TO DO: Return error if no user found.
+  // returns: {
+    // user: {...},
+    // pendingConnectionsIncoming: [..],
+    // pendingConnectionsOutgoing: [..],
+    // acceptedConnections: [..],
+    // suggestedConnections: [..],
+  // }
   .get(function(req, res) {
     var userId = req.url.slice(1);
-    db.findUserById(userId, function(data) {
-      res.send(data);
+    db.findUserById(userId, function(user) {
+      var user = user;
+      db.getConnectionsBySourceId(userId, function(connections) {
+        var connectionsAsSource = connections;
+        db.getConnectionsByTargetId(userId, function(connections) {
+          var connectionsAsTarget = connections;
+          var pendingConnectionsOutgoing = [];
+          var pendingConnectionsIncoming = [];
+          var acceptedConnections = [];
+          connectionsAsSource.forEach(function(connection) {
+            if (connection.pending === true) {
+              pendingConnectionsOutgoing.push(connection);
+            } else {
+              acceptedConnections.push(connection);
+            }
+          });
+          connectionsAsTarget.forEach(function(connection) {
+            if (connection.pending === true) {
+              pendingConnectionsIncoming.push(connection);
+            } else {
+              acceptedConnections.push(connection);
+            }
+          });
+          // Dev Note: right now, suggestedConnections just returns all users except for the one requesting
+          db.findAllUsers(function(allUsers) {
+            var suggestedConnections = allUsers.filter((user) => user.dataValues.userId + '' !== userId);
+            res.send({
+              user: user,
+              pendingConnectionsIncoming: pendingConnectionsIncoming,
+              pendingConnectionsOutgoing: pendingConnectionsOutgoing,
+              acceptedConnections: acceptedConnections,
+              suggestedConnections: suggestedConnections
+            })
+          })
+        })
+      })
     })
   })
+
+
+
+
   // deletes user by ID *To Do: Return error if no user found.
   .delete(function(req,res) {
     var userId = req.url.slice(1);
