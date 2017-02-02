@@ -10,38 +10,30 @@ router.route('/')
      	res.send(data);
      })
   })
-  // posts new user, and stores profile image to server/assets. Returns user
+  // posts new user. Returns user
   .post(function(req, res) {
 
     // The request body should look like a user.
     // Here's an example of a request body:
     // {
-    //   "phone": 8675309,
+    //   "
     //   "username": "RouteTesting",
+    //   "password": "unencrypted"
+    //   "phone": 8675309,
     //   "tagline": "wowimcool",
     //   "firstName": "michael",
     //   "lastName": "comes",
     //   "location": "SF",
     //   "field": "engineering",
     //   "company": "HR",
-    //   "updatedAt": "2017-01-31T23:33:15.000Z",
-    //   "createdAt": "2017-01-31T23:33:15.000Z"
+    //   "imageUrl": "cloudinary.com/something"
     // }
-    // The request should also include a file called "profile".
 
     var user = req.body;
     var userImage = req.files.profile;
     // post user to db
     db.addUser(user, function(result) {
-      // store profile image in server/assets
-      var userId = result.userId;
-      userImage.mv('server/assets/'+ userId + '.jpg', function(err) {
-        if (err) {
-          res.status(500).send(err);
-        } else {
-          res.send(result);
-        }
-      })
+      res.send(result);
     });
   });
 
