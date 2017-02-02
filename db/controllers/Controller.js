@@ -67,13 +67,38 @@ exports.deleteUser = function(userId, callback) {
 /****
   Connection Controllers
 ****/
-exports.addConnection = function(myUserId, connectionId, callback) {
+
+
+exports.addConnection = function(sourceUserId, targetUserId, callback) {
   model.Connections.create({
-    userUserId: myUserId,
-    targetUserId: connectionId,
+    userUserId: sourceUserId,
+    targetUserId: targetUserId,
     pending: true
   }).then(function(result) {callback(result)});
 }
+
+exports.acceptConnection = function(connectionId, callback) {
+  model.Connections.update({
+    pending: false,
+  }, {
+    where: {
+      connectionId: connectionId
+    }
+  }).then(function(result) {callback(result)})
+}
+
+// Post.update({
+//   updatedAt: null,
+// }, {
+//   where: {
+//     deletedAt: {
+//       $ne: null
+//     }
+//   }
+// });
+
+
+
 
 exports.getAllConnections = function(callback) {
   model.Connections.findAll().then(function(result) {callback(result)})
