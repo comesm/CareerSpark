@@ -10,7 +10,8 @@ var Users = sequelize.define('users', {
     autoIncrement: true
   },
   username: Sequelize.STRING,
-  password: Sequelize.STRING,
+
+  password: Sequalize.STRING,
   phone: Sequelize.INTEGER,
   tagline: Sequelize.STRING,
   firstName: Sequelize.STRING,
