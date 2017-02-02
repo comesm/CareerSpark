@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Header from './Header.jsx';
+
 import User from './User.jsx';
 import $ from 'jquery';
 
@@ -41,6 +42,7 @@ export default class App extends React.Component {
   }
 
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
+
   render() {
     return (
       <div>
@@ -55,6 +57,7 @@ export default class App extends React.Component {
              className="user-choice green-check"
         />
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
+
       </div>
     )
   }
@@ -88,4 +91,4 @@ export default class App extends React.Component {
   //     success: callback,
   //     error: callback
   //   })
-  // }
+
