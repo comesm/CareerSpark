@@ -3,7 +3,7 @@ var model = require('../index.js');
 
 
 /****
-USER CONTROLLERS 
+USER CONTROLLERS
 ****/
 
 // //write our queries
@@ -28,6 +28,15 @@ exports.findUserById = function(id, callback) {
       userId: id
     }
   }).then(function(results) {callback(results)});
+}
+exports.findUserByUserName = function(username, callback) {
+  model.Users.findAll({where: {username: username}}).
+    then(function(results) {callback(results)});
+}
+
+exports.findAllUsersByLocation = function(location, callback) {
+  model.Users.findAll({where: {location: location}}).
+    then(function(results) {callback(results)});
 }
 
 exports.findUserByUserName = function(username, callback) {
@@ -62,6 +71,7 @@ exports.findAllUsersByCompany = function(company, callback) {
 
 exports.addUser = function(user, callback) {
   model.Users.create(user).then(function(result) {
+
     callback(result);
   });
 }
@@ -121,7 +131,7 @@ exports.getConnectionsByTargetId = function(targetUserId, callback) {
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({
     where: {
-      userUserId: userId, 
+      userUserId: userId,
       ConnectionUserId: connectionId
     }
   })
