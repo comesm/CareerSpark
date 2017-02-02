@@ -137,7 +137,6 @@ describe('Users', function() {
             });
         });
     });
-
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
