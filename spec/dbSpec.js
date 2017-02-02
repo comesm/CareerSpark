@@ -137,6 +137,7 @@ describe('Users', function() {
             });
         });
     });
+
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
@@ -166,6 +167,7 @@ describe('Users', function() {
          });
       });
     });
+<<<<<<< fa2806413d16ca634e58e1d39b8de67320c35730
 
       it('should delete user', function(done) {
 
@@ -210,6 +212,8 @@ describe('Users', function() {
       });
 
     });
+  };
+
   };
 
 
