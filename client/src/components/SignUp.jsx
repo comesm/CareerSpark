@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
+import {render} from 'react-dom';
+import NewUser from './NewUser.jsx';
 // import $ from 'jquery';
 
 export default class SignUp extends React.Component {
@@ -15,8 +16,8 @@ export default class SignUp extends React.Component {
   render() {
     return (
   	  <div>
-  	    <p>Blah, blah blah.</p>
-  	  	<p>You talk too much.</p>
+        <h3>New User Sign Up</h3>
+        <NewUser />
       </div>
     )
   }
