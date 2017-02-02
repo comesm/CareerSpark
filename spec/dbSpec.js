@@ -128,10 +128,7 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
-<<<<<<< 5b95cf4914381c90c9b4319110a2531d915ed022
-=======
-                  console.log('136------', results)
->>>>>>> tests pass
+
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
                  done();
@@ -140,7 +137,7 @@ describe('Users', function() {
             });
         });
     });
-<<<<<<< 5b95cf4914381c90c9b4319110a2531d915ed022
+
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
@@ -171,8 +168,7 @@ describe('Users', function() {
       });
 
     });
-=======
->>>>>>> tests pass
+
   });
 
 
