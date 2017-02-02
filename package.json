@@ -33,30 +33,11 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
-<<<<<<< c9457a435a6415bbfb2fc98904622e44e3645581
-<<<<<<< b88b7bd56d3881cab77d7754ab350899249b1a02
-<<<<<<< 32ebc586268de2b35746f792e14ebbb9b312bd00
     "webpack-dev-server": "^1.16.3",
     "react-router": "^3.0.2",
-    "webpack": "^1.14.0"
-=======
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.3"
->>>>>>> (Client)
-=======
-=======
-<<<<<<< 531425efc43a1836b8d7c103c6b4aabb83b17ec4
->>>>>>> minor change to controller
-<<<<<<< e29bc9307ffb2a144790ae88d9855002987852c2
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.3"
-=======
-=======
->>>>>>> minor change to controller
+    "webpack-dev-server": "^1.16.3",
     "react-router": "^3.0.2",
-    "webpack": "^1.14.0"
->>>>>>> minor change to controller
->>>>>>> minor change to controller
   },
   "dependencies": {
     "axios": "^0.15.3",
