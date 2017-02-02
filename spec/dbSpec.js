@@ -136,6 +136,7 @@ describe('Users', function() {
             });
         });
     });
+    
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
@@ -165,6 +166,10 @@ describe('Users', function() {
          });
       });
     });
+<<<<<<< 025107efb62c3586d0310cb0c72962ac35a82683
+=======
+
+>>>>>>> rebase conflict merge
   });
 
 
