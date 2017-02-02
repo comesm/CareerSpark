@@ -4,17 +4,21 @@ var sequelize = new Sequelize('UserDb','root','');
 //define model
 
 var Users = sequelize.define('users', {
-  userId: {primaryKey: true, type: Sequelize.INTEGER,
-    autoIncrement: true},
-  phone: Sequelize.INTEGER,
+  userId: {
+    primaryKey: true,
+    type: Sequelize.INTEGER,
+    autoIncrement: true
+  },
   username: Sequelize.STRING,
-  //password
+  password: Sequalize.STRING,
+  phone: Sequelize.INTEGER,
   tagline: Sequelize.STRING,
   firstName: Sequelize.STRING,
   lastName: Sequelize.STRING,
   location: Sequelize.STRING,
   field: Sequelize.STRING,
-  company: Sequelize.STRING
+  company: Sequelize.STRING,
+  profileImageUrl: Sequelize.STRING
 });
 
 
