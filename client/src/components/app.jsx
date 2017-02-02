@@ -54,7 +54,19 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
+<<<<<<< b88b7bd56d3881cab77d7754ab350899249b1a02
         <UserEntryView user={this.state} />
+=======
+        <img src="./images/red-x.png"
+             alt="click to reject"
+             className="user-choice red-x"
+        />
+        <User />
+        <img src="./images/green-check.png"
+             alt="click to approve"
+             className="user-choice green-check"
+        />
+>>>>>>> minor change to controller
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
         <button onClick={()=>{this.getImages()}}>Fetch images</button>
       </div>
@@ -90,4 +102,8 @@ export default class App extends React.Component {
   //     success: callback,
   //     error: callback
   //   })
+<<<<<<< b88b7bd56d3881cab77d7754ab350899249b1a02
 
+=======
+  // }
+>>>>>>> minor change to controller

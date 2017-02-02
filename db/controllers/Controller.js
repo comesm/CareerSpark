@@ -25,8 +25,14 @@ exports.findUserById = function(id, callback) {
     where: {
       userId: id
     }
+<<<<<<< e29bc9307ffb2a144790ae88d9855002987852c2
   }).then(function(results) {callback(results)});
 }
+=======
+  }).then(function(results) {callback(results)})
+};
+
+>>>>>>> minor change to controller
 exports.findUserByUserName = function(username, callback) {
   model.Users.findAll({where: {username: username}}).
     then(function(results) {callback(results)});
