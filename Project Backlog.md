@@ -36,13 +36,8 @@ Stretch Goals:
 
 Index/Main Page:
 -logout button
-Profile 
--logout button
--edit info
-Index Page
 -GET user matches on page load
--Sample Data (introduction emails)
-Tests
+-integrate location
 
 Styling:
 -tinder-esque center focus for approving/denying new connections
