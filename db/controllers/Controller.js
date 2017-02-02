@@ -126,6 +126,7 @@ exports.deleteConnection = function(userId, connectionId, callback) {
       ConnectionUserId: connectionId
     }
   })
+}
 exports.addConnection = function(myUserId, otherPersonId, callback) {
   model.Connections.create({userUserId: myUserId,
     ConnectionUserId: otherPersonId})
