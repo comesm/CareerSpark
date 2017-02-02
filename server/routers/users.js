@@ -47,7 +47,14 @@ router.route('/')
 
 // when URL ending is /api/users/<id>
 router.route('/:id')
-  // returns user by ID. *TO DO: Return error if no user found.
+  // returns data on user by ID. *TO DO: Return error if no user found.
+  // returns: {
+    // user: {...},
+    // pendingConnectionsIncoming: [..],
+    // pendingConnectionsOutgoing: [..],
+    // acceptedConnections: [..],
+    // suggestedConnections: [..],
+  // }
   .get(function(req, res) {
     var userId = req.url.slice(1);
     db.findUserById(userId, function(user) {
@@ -73,11 +80,16 @@ router.route('/:id')
               acceptedConnections.push(connection);
             }
           });
-          res.send({
-            user: user,
-            pendingConnectionsIncoming: pendingConnectionsIncoming,
-            pendingConnectionsOutgoing: pendingConnectionsOutgoing,
-            acceptedConnections: acceptedConnections
+          // Dev Note: right now, suggestedConnections just returns all users except for the one requesting
+          db.findAllUsers(function(allUsers) {
+            var suggestedConnections = allUsers.filter((user) => user.dataValues.userId + '' !== userId);
+            res.send({
+              user: user,
+              pendingConnectionsIncoming: pendingConnectionsIncoming,
+              pendingConnectionsOutgoing: pendingConnectionsOutgoing,
+              acceptedConnections: acceptedConnections,
+              suggestedConnections: suggestedConnections
+            })
           })
         })
       })
