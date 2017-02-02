@@ -25,7 +25,6 @@ exports.findUserById = function(id, callback) {
     where: {
       userId: id
     }
-
   }).then(function(results) {callback(results)})
 };
 

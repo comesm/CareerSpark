@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header.jsx';
+
 import User from './User.jsx';
 import UserEntryView from './UserEntryView.jsx'
 import $ from 'jquery';
@@ -54,9 +55,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-<<<<<<< b88b7bd56d3881cab77d7754ab350899249b1a02
         <UserEntryView user={this.state} />
-=======
         <img src="./images/red-x.png"
              alt="click to reject"
              className="user-choice red-x"
@@ -66,9 +65,8 @@ export default class App extends React.Component {
              alt="click to approve"
              className="user-choice green-check"
         />
->>>>>>> minor change to controller
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
-        <button onClick={()=>{this.getImages()}}>Fetch images</button>
+
       </div>
     )
   }
@@ -102,8 +100,12 @@ export default class App extends React.Component {
   //     success: callback,
   //     error: callback
   //   })
+<<<<<<< c9457a435a6415bbfb2fc98904622e44e3645581
 <<<<<<< b88b7bd56d3881cab77d7754ab350899249b1a02
 
 =======
   // }
+>>>>>>> minor change to controller
+=======
+
 >>>>>>> minor change to controller
