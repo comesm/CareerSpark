@@ -25,7 +25,7 @@ var Connections = sequelize.define('connections', {
  });
 
 //join table initiate
- Users.belongsToMany(Users, {as: 'Connection', through: Connections})
+ Users.belongsToMany(Users, {as: 'Target', through: Connections})
 
 
 Users.sync();
