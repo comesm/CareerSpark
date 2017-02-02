@@ -33,8 +33,13 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
+<<<<<<< e29bc9307ffb2a144790ae88d9855002987852c2
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.3"
+=======
+    "react-router": "^3.0.2",
+    "webpack": "^1.14.0"
+>>>>>>> minor change to controller
   },
   "dependencies": {
     "axios": "^0.15.3",
