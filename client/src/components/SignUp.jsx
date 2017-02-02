@@ -1,10 +1,8 @@
 import React from 'react';
-import {render} from 'react-dom';
-import Header from './Header.jsx';
-import User from './User.jsx';
+import { render } from 'react-dom';
 // import $ from 'jquery';
 
-export default class App extends React.Component {
+export default class SignUp extends React.Component {
   constructor(props) {
   	super(props);
 

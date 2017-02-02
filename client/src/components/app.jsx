@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import Header from './Header.jsx';
 import User from './User.jsx';
 // import $ from 'jquery';

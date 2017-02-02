@@ -1,6 +1,5 @@
 import React from 'react'
 import App from './App.jsx';
-import { RouteHandler } from './Router.jsx';
 
 const Header = () => (
   <div>
@@ -9,7 +8,7 @@ const Header = () => (
       <div id="sub-header">Supercharge Your Professional Network</div>
     </header>
 
-    <RouteHandler />
+    <Nav />
   </div>
 )
 
