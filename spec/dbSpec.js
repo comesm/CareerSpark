@@ -122,6 +122,7 @@ describe('Users', function() {
             });
         });
       });
+
       it('should delete user', function(done) {
 
           controller.getUserId('comesm', function(id) {
@@ -167,6 +168,7 @@ describe('Users', function() {
       });
 
     });
+
       it('should delete user', function(done) {
 
           controller.getUserId('comesm', function(id) {
@@ -210,7 +212,7 @@ describe('Users', function() {
       });
 
     });
-  });
+  };
 
 
 
