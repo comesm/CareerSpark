@@ -8,6 +8,7 @@ const _cloudinaryUploadPreset = 'profileImage'
 // Cloudinary API documentation: http://cloudinary.com/blog/restful_api_for_managing_your_website_s_images_and_other_online_assets
 const _cloudinaryUploadUrl = 'https://api.cloudinary.com/v1_1/baggins/upload'
 
+
 export default class NewUser extends React.Component {
   constructor(props) {
   	super(props);

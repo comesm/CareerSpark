@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< 32ebc586268de2b35746f792e14ebbb9b312bd00
+=======
+import { render } from 'react-dom';
+>>>>>>> (Client)
 import UserPhoto from './UserPhoto.jsx'; //may need {UserPhoto}
 
 export default class User extends React.Component {
