@@ -68,24 +68,32 @@ exports.deleteUser = function(userId, callback) {
   Connection Controllers
 ****/
 exports.addConnection = function(myUserId, connectionId, callback) {
-  model.Connections.create({userUserId: myUserId,
-    ConnectionUserId: connectionId})
-      .then(function(result) {callback(result)});
+  model.Connections.create({
+    userUserId: myUserId,
+    targetUserId: connectionId,
+    pending: true
+  }).then(function(result) {callback(result)});
 }
 
 exports.getAllConnections = function(callback) {
   model.Connections.findAll().then(function(result) {callback(result)})
 }
 
-exports.addConnection = function(myUserId, otherPersonId, callback) {
-  model.Connections.create({userUserId: myUserId,
-    ConnectionUserId: otherPersonId})
-      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
+
+exports.getConnectionsBySourceId = function(sourceUserId, callback) {
+  model.Connections.findAll({
+    where: {
+      userUserId: sourceUserId
+    }
+  }).then(function(result) {callback(result)});
 }
 
-exports.getConnections = function(userId, callback) {
-  model.Connections.findAll({where:  {userUserId:userId}})
-    .then(function(result) {callback(result)});
+exports.getConnectionsByTargetId = function(targetUserId, callback) {
+  model.Connections.findAll({
+    where: {
+      targetUserId: targetUserId
+    }
+  }).then(function(result) {callback(result)});
 }
 
 exports.deleteConnection = function(userId, connectionId, callback) {

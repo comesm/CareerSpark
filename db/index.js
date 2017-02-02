@@ -18,10 +18,10 @@ var Users = sequelize.define('users', {
 });
 
 
-
 var Connections = sequelize.define('connections', {
   connectionId: {primaryKey: true, type: Sequelize.INTEGER,
     autoIncrement: true},
+  pending: Sequelize.BOOLEAN
  });
 
 //join table initiate

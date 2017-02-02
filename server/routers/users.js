@@ -50,10 +50,43 @@ router.route('/:id')
   // returns user by ID. *TO DO: Return error if no user found.
   .get(function(req, res) {
     var userId = req.url.slice(1);
-    db.findUserById(userId, function(data) {
-      res.send(data);
+    db.findUserById(userId, function(user) {
+      var user = user;
+      db.getConnectionsBySourceId(userId, function(connections) {
+        var connectionsAsSource = connections;
+        db.getConnectionsByTargetId(userId, function(connections) {
+          var connectionsAsTarget = connections;
+          var pendingConnectionsOutgoing = [];
+          var pendingConnectionsIncoming = [];
+          var acceptedConnections = [];
+          connectionsAsSource.forEach(function(connection) {
+            if (connection.pending === true) {
+              pendingConnectionsOutgoing.push(connection);
+            } else {
+              acceptedConnections.push(connection);
+            }
+          });
+          connectionsAsTarget.forEach(function(connection) {
+            if (connection.pending === true) {
+              pendingConnectionsIncoming.push(connection);
+            } else {
+              acceptedConnections.push(connection);
+            }
+          });
+          res.send({
+            user: user,
+            pendingConnectionsIncoming: pendingConnectionsIncoming,
+            pendingConnectionsOutgoing: pendingConnectionsOutgoing,
+            acceptedConnections: acceptedConnections
+          })
+        })
+      })
     })
   })
+
+
+
+
   // deletes user by ID *To Do: Return error if no user found.
   .delete(function(req,res) {
     var userId = req.url.slice(1);
