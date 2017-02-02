@@ -19,7 +19,7 @@ app.use('/images', express.static(__dirname + '/../server/assets'))
 
 // URL ending for Users
 app.use('/api/users', userRouter);
-  // GET http://localhost:3000/api/users  ==> returns all users
+  // GET http://localhost:3000/api/users  ==> returns all users//
   // GET http://localhost:3000/api/users/1  ==> returns data for user 1 (user, and connections info)
   // POST http://localhost:3000/api/users  ==> posts new user to database, saves image to storage
 
