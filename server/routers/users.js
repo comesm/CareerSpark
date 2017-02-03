@@ -12,7 +12,6 @@ router.route('/')
   })
   // posts new user. Returns user
   .post(function(req, res) {
-
     // The request body should look like a user.
     // Here's an example of a request body:
     // {
@@ -30,7 +29,6 @@ router.route('/')
     // }
 
     var user = req.body;
-    var userImage = req.files.profile;
     // post user to db
     db.addUser(user, function(result) {
       res.send(result);
