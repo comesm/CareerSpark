@@ -43,7 +43,6 @@ export default class NewUser extends React.Component {
 			'field: ', this.state.field,  '\n',
 			'tagline: ', this.state.tagline,  '\n',
 			'username: ', this.state.username,  '\n',
->>>>>>> Adding database POST request
 			'profileImageUrl: ', this.state.profileImageUrl, '\n',
 			'password: ', this.state.password
       );
@@ -53,7 +52,9 @@ export default class NewUser extends React.Component {
       url: 'http://localhost:3000/api/users/',
       method: "POST",
 
-    	data: JSON.stringify(this.state),
+    	data: this.state,
+    	//data: JSON.stringify(this.state),
+
       success: function(){console.log("success");},
       error: function(){console.log("error");}
     })
