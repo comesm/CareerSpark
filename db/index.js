@@ -11,7 +11,7 @@ var Users = sequelize.define('users', {
   },
   username: Sequelize.STRING,
 
-  password: Sequalize.STRING,
+  password: Sequelize.STRING,
   phone: Sequelize.INTEGER,
   tagline: Sequelize.STRING,
   firstName: Sequelize.STRING,
