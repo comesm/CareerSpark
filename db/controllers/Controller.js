@@ -137,23 +137,13 @@ exports.deleteConnection = function(userId, connectionId, callback) {
     }
   })
 }
-exports.addConnection = function(myUserId, otherPersonId, callback) {
-  model.Connections.create({userUserId: myUserId,
-    ConnectionUserId: otherPersonId})
-      .then(function(result) {callback(result)}).catch(function(err) {});
-}
-
-exports.addConnection = function(myUserId, otherPersonId, callback) {
-  model.Connections.create({userUserId: myUserId,
-    ConnectionUserId: otherPersonId})
-      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
-}
 
 exports.getConnections = function(userId, callback) {
   model.Connections.findAll({where:  {userUserId:userId}})
     .then(function(result) {callback(result)});
 }
 
+<<<<<<< 0b71bd8e41233fcaebd74d9616fad5434f5fdbe0
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
     .then(function(deleted) {callback(deleted)});
@@ -186,5 +176,7 @@ exports.deleteConnection = function(userId, connectionId, callback) {
     .then(function(deleted) {callback(deleted)});
 }
 
+=======
+>>>>>>> (server/db) changed data returned from GET user request, debugged POST connection
 
 

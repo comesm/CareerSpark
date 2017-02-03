@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header.jsx';
-
 import User from './User.jsx';
 import UserEntryView from './UserEntryView.jsx'
 import $ from 'jquery';
@@ -100,12 +99,4 @@ export default class App extends React.Component {
   //     success: callback,
   //     error: callback
   //   })
-<<<<<<< c9457a435a6415bbfb2fc98904622e44e3645581
-<<<<<<< b88b7bd56d3881cab77d7754ab350899249b1a02
 
-=======
-  // }
->>>>>>> minor change to controller
-=======
-
->>>>>>> minor change to controller

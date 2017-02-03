@@ -47,39 +47,63 @@ router.route('/:id')
   // }
   .get(function(req, res) {
     var userId = req.url.slice(1);
+    // first get our user
     db.findUserById(userId, function(user) {
       var user = user;
-      db.getConnectionsBySourceId(userId, function(connections) {
-        var connectionsAsSource = connections;
-        db.getConnectionsByTargetId(userId, function(connections) {
-          var connectionsAsTarget = connections;
-          var pendingConnectionsOutgoing = [];
-          var pendingConnectionsIncoming = [];
-          var acceptedConnections = [];
-          connectionsAsSource.forEach(function(connection) {
-            if (connection.pending === true) {
-              pendingConnectionsOutgoing.push(connection);
-            } else {
-              acceptedConnections.push(connection);
-            }
-          });
-          connectionsAsTarget.forEach(function(connection) {
-            if (connection.pending === true) {
-              pendingConnectionsIncoming.push(connection);
-            } else {
-              acceptedConnections.push(connection);
-            }
-          });
-          // Dev Note: right now, suggestedConnections just returns all users except for the one requesting
-          db.findAllUsers(function(allUsers) {
-            var suggestedConnections = allUsers.filter((user) => user.dataValues.userId + '' !== userId);
-            res.send({
-              user: user,
-              pendingConnectionsIncoming: pendingConnectionsIncoming,
-              pendingConnectionsOutgoing: pendingConnectionsOutgoing,
-              acceptedConnections: acceptedConnections,
-              suggestedConnections: suggestedConnections
-            })
+      // then get all users
+      // Dev Note: right now, suggestedConnections just returns all users except for the one requesting
+      db.findAllUsers(function(allUsers) {
+        var suggestedConnections = allUsers.filter((user) => user.dataValues.userId + '' !== userId);
+          // then collect all connections where user is source (or initiated the connection)
+          db.getConnectionsBySourceId(userId, function(connections) {
+            var connectionsAsSource = connections;
+            // then collect all connections where user is the target (or was offered a connection)
+            db.getConnectionsByTargetId(userId, function(connections) {
+              var connectionsAsTarget = connections;
+              var pendingConnectionsOutgoing = []; //array of IDs
+              var pendingConnectionsIncoming = []; //array of IDs
+              var acceptedConnections = [];  //array IDs
+              // sort connections as pending/accepted
+              connectionsAsSource.forEach(function(connection) {
+                if (connection.pending === true) {
+                  pendingConnectionsOutgoing.push(connection.targetUserId);
+                } else {
+                  acceptedConnections.push(connection.targetUserId);
+                }
+              });
+              // sort connections as pending/accepted
+              connectionsAsTarget.forEach(function(connection) {
+                if (connection.pending === true) {
+                  pendingConnectionsIncoming.push(connection.userUserId);
+                } else {
+                  acceptedConnections.push(connection.userUserId);
+                }
+              });
+              // go from array of connections to array of profiles
+              var outgoingProfiles = pendingConnectionsOutgoing.map(function(id) {
+                return suggestedConnections.filter(function(profile) {
+                  return profile.userId === id;
+                })[0];
+              })
+              // go from array of connections to array of profiles
+              var incomingProfiles = pendingConnectionsIncoming.map(function(id) {
+                return suggestedConnections.filter(function(profile) {
+                  return profile.userId === id;
+                })[0];
+              })
+              // go from array of connections to array of profiles
+              var acceptedProfiles = acceptedConnections.map(function(id) {
+                return suggestedConnections.filter(function(profile) {
+                  return profile.userId === id;
+                })[0];
+              })
+              res.send({
+                user: user,
+                pendingConnectionsIncoming: incomingProfiles,
+                pendingConnectionsOutgoing: outgoingProfiles,
+                acceptedConnections: acceptedProfiles,
+                suggestedConnections: suggestedConnections
+              })
           })
         })
       })
