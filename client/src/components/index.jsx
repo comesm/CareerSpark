@@ -13,9 +13,7 @@ import SignUp from './Signup.jsx';
 // , document.getElementById('app'));
 
 /********
-
 DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented out code for what's below
-
 ********/
 
 
