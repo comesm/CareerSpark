@@ -38,19 +38,11 @@ export default class NewUser extends React.Component {
     alert('firstName: ', this.state.firstName, '\n',
 	    'lastName: ', this.state.lastName, '\n',
 			'phone: ',  this.state.phone,  '\n',
-<<<<<<< 366b72c3df2aa8598c777c12e382ef2564d970ab
 			'location: ', this.state.location,  '\n',
 			'company: ', this.state.company,  '\n',
 			'field: ', this.state.field,  '\n',
 			'tagline: ', this.state.tagline,  '\n',
 			'username: ', this.state.username,  '\n',
-=======
-			'location: ', this.state.location,  '\n',
-			'company: ', this.state.company,  '\n',
-			'field: ', this.state.field,  '\n',
-			'tagline: ', this.state.tagline,  '\n',
-			'username: ', this.state.username,  '\n',
->>>>>>> Adding database POST request
 			'profileImageUrl: ', this.state.profileImageUrl, '\n',
 			'password: ', this.state.password
       );
@@ -59,13 +51,10 @@ export default class NewUser extends React.Component {
     $.ajax({
       url: 'http://localhost:3000/api/users/',
       method: "POST",
-<<<<<<< 366b72c3df2aa8598c777c12e382ef2564d970ab
     	data: this.state,
     	//data: JSON.stringify(this.state),
 
-=======
-    	data: JSON.stringify(this.state),
->>>>>>> Adding database POST request
+
       success: function(){console.log("success");},
       error: function(){console.log("error");}
     })
