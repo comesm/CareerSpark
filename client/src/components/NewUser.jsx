@@ -25,9 +25,7 @@ export default class NewUser extends React.Component {
       profileImageUrl: '',
       // profileImage doesn't get sent to our server, but needs to be in state for rendering preview
   	}
-
   	this.handleInputChange = this.handleInputChange.bind(this);
-
   	this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -53,7 +51,6 @@ export default class NewUser extends React.Component {
       method: "POST",
     	data: this.state,
     	//data: JSON.stringify(this.state),
-
       success: function(){console.log("success");},
       error: function(){console.log("error");}
     })
