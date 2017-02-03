@@ -6,4 +6,3 @@ export default class About extends React.Component {
     return <Header />
   }
 }
-
