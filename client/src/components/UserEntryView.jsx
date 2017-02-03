@@ -12,17 +12,21 @@ export default class UserEntryView extends React.Component {
     //   suggestedConnections: [],
     // }
   constructor(props) {
+<<<<<<< 0af59b49e9ef7dfc8354e7e250bf2bda67ac2fbd
 
+=======
+    console.log('props', props)
+>>>>>>> swiping works
    super(props);
    this.state = {current: this.props.user.pendingConnectionsIncoming[0],
      currentList: this.props.user.pendingConnectionsIncoming}
   }
-  componentWillMount() {
+  componentDidMount() {
 
   }
 
   clickYes() {
-    console.log('yes');
+    console.log('before yes current', this.state.current);
     var currUser = this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
 
@@ -41,10 +45,12 @@ export default class UserEntryView extends React.Component {
         this.setState({currentList: this.props.user.suggestedConnections});
       }
     }
+        console.log('after yes current', this.state.current);
+
   }
 
   clickNo() {
-        console.log('21 NO');
+    console.log('before no current', this.state.current);
 
     if(this.props.user.pendingConnectionsIncoming.length === 0) {
         this.setState({currentList: this.props.user.suggestedConnections});
@@ -53,6 +59,7 @@ export default class UserEntryView extends React.Component {
     this.setState({current: this.state.currentList[0]});
 
 
+    console.log('after no current', this.state.current);
 
 =======
     super(props);

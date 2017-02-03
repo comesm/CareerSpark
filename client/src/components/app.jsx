@@ -15,6 +15,7 @@ export default class App extends React.Component {
       pendingConnectionsOutgoing: [],
       acceptedConnections: [],
       suggestedConnections: [],
+      dataFetched:false
   	}
   }
 
@@ -29,9 +30,9 @@ export default class App extends React.Component {
         acceptedConnections: mockData.acceptedConnections,
         pendingConnectionsIncoming: mockData.pendingConnectionsIncoming,
         pendingConnectionsOutgoing: mockData.pendingConnectionsOutgoing,
-        suggestedConnections: mockData.suggestedConnections
+        suggestedConnections: mockData.suggestedConnections,
+        dataFetched:true
       }, function() {
-        console.log('updated Data', this.state);
       });
     };
     // makes request to our server, and sets state through the callback
@@ -59,10 +60,11 @@ export default class App extends React.Component {
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
 
   render() {
-
+    var dataFetched = this.state.dataFetched;
     return (
       <div>
         <Header />
+<<<<<<< 0af59b49e9ef7dfc8354e7e250bf2bda67ac2fbd
         <UserEntryView user={this.state} />
 <<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
         <img src="./images/red-x.png"
@@ -76,8 +78,10 @@ export default class App extends React.Component {
         />
 =======
 >>>>>>> Added basic swiping functionality
+=======
+        {dataFetched ? <UserEntryView user={this.state} />: ''}
+>>>>>>> swiping works
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
-        <button onClick={()=>{this.getImages()}}>Fetch images</button>
       </div>
     )
   }

@@ -21,7 +21,7 @@ exports.acceptedConnections = [
       tagline: 'help me find a job',
       username: 'jim',
       password: 'jones',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://facts.be/app/uploads/David-Hasselhoff-face.jpg'},
 
   {firstName: 'John',
       lastName: 'Smith',
@@ -32,7 +32,7 @@ exports.acceptedConnections = [
       tagline: 'need a new boss',
       username: 'John',
       password: 'Smith',
-      profileImageUrl: ''},
+      profileImageUrl: 'https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTc0MTk1NzI0/john-smith-9486928-1-402.jpg'},
 ]
 
 exports.suggestedConnections =[
@@ -45,7 +45,7 @@ exports.suggestedConnections =[
       tagline: 'help me find a job',
       username: 'Tim',
       password: 'Taylor',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://www.sonic1029.com/wp-content/blogs.dir/3/files/TIMTAYLOR.png'},
 
   {firstName: 'George',
       lastName: 'Foreman',
@@ -56,7 +56,7 @@ exports.suggestedConnections =[
       tagline: 'want to start boxing again',
       username: 'George',
       password: 'Foreman',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://cdn.images.express.co.uk/img/dynamic/130/590x/George-Foreman-525485.jpg'},
 
        {firstName: 'Alex',
       lastName: 'Trebek',
@@ -67,7 +67,7 @@ exports.suggestedConnections =[
       tagline: 'daily doubler',
       username: 'Alex',
       password: 'Trebek',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://vignette3.wikia.nocookie.net/gameshows/images/0/0e/Alex-trebek-mustache.jpg/revision/latest?cb=20140102041845'},
 
   {firstName: 'Michael',
       lastName: 'James',
@@ -78,7 +78,7 @@ exports.suggestedConnections =[
       tagline: 'fun computers',
       username: 'Michael',
       password: 'James',
-      profileImageUrl: ''},
+      profileImageUrl: 'https://pbs.twimg.com/profile_images/761986102676729856/R_hXAukf.jpg'},
 
 ]
 
@@ -92,7 +92,7 @@ exports.pendingConnectionsIncoming = [
       tagline: 'this is cool',
       username: 'Mick',
       password: 'Jagger',
-      profileImageUrl: ''},
+      profileImageUrl: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxMTY4NTQ5N15BMl5BanBnXkFtZTcwMTY0NDk4Mw@@._V1_UY317_CR13,0,214,317_AL_.jpg'},
 
   {firstName: 'Tony',
       lastName: 'Montana',
@@ -103,7 +103,7 @@ exports.pendingConnectionsIncoming = [
       tagline: 'the world is mine',
       username: 'Tony',
       password: 'Montana',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://vignette1.wikia.nocookie.net/scarface/images/4/44/Tony_Montana.jpg/revision/latest?cb=20120604034628&path-prefix=en'},
 
        {firstName: 'Jane',
       lastName: 'Austen',
@@ -114,7 +114,7 @@ exports.pendingConnectionsIncoming = [
       tagline: 'Emma Pride and Prejudice',
       username: 'Jane',
       password: 'Austen',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://www.daniel-bearman.com/wp-content/uploads/2015/04/Jane-Austen-7fd22ed7446999a4097e310067a85dea9ee15e04.jpg'},
 
   {firstName: 'Rick',
       lastName: 'Astley',
@@ -125,7 +125,7 @@ exports.pendingConnectionsIncoming = [
       tagline: 'never gonna give you up',
       username: 'Rick',
       password: 'Astley',
-      profileImageUrl: ''}]
+      profileImageUrl: 'http://i234.photobucket.com/albums/ee136/suwarnaadi/hair/rick-astley-80s-hairstyle.jpg'}]
 
 
 exports.pendingConnectionsOutgoing = [
@@ -138,7 +138,7 @@ exports.pendingConnectionsOutgoing = [
       tagline: 'i like to write',
       username: 'Jim',
       password: 'Snow',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://images.performgroup.com/di/library/omnisport/70/f5/derek-jeter-020215-getty-ftr-usjpg_1gub1gvmuyw0e1tpizje7sss8m.jpg?t=1432320339'},
 
   {firstName: 'Samuel',
       lastName: 'Wylie',
@@ -149,7 +149,7 @@ exports.pendingConnectionsOutgoing = [
       tagline: 'buy these shoes',
       username: 'Samuel',
       password: 'Wylie',
-      profileImageUrl: ''},
+      profileImageUrl: 'https://s-media-cache-ak0.pinimg.com/originals/fb/a7/26/fba726bdf868ecf85a49d40aa7e9f2d0.jpg'},
 
        {firstName: 'Van',
       lastName: 'Morrison',
@@ -160,7 +160,7 @@ exports.pendingConnectionsOutgoing = [
       tagline: 'sha la la la la la ti da',
       username: 'Van',
       password: 'Morrison',
-      profileImageUrl: ''},
+      profileImageUrl: 'http://www.wavelengthltd.co.uk/wp-content/uploads/2015/08/van-morrison-pic.jpg'},
 
   {firstName: 'Jack',
       lastName: 'Daniels',
@@ -171,7 +171,7 @@ exports.pendingConnectionsOutgoing = [
       tagline: 'your best friend',
       username: 'Jack',
       password: 'Daniels',
-      profileImageUrl: ''}]
+      profileImageUrl: 'https://s3-us-west-2.amazonaws.com/find-a-grave-prod/photos/2009/248/1556_125221940406.jpg'}]
 
 
 

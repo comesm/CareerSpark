@@ -1,35 +1,30 @@
 import React from 'react';
-<<<<<<< f4f85eabe7c0114a35a04cd99c6396c3ff8f8ea5
-<<<<<<< 32ebc586268de2b35746f792e14ebbb9b312bd00
-=======
+
 import { render } from 'react-dom';
->>>>>>> (Client)
-=======
->>>>>>> (client) Deleted unused component (router.jsx) and updated es5 syntax to
+
 import UserPhoto from './UserPhoto.jsx'; //may need {UserPhoto}
 
 export default class User extends React.Component {
   constructor(props) {
   	super(props);
-
-  	this.state = {
-
-  	}
-
-  }
+      this.state = this.props;
+    }
 
   render() {
+    console.log('14', this.props);
   	return (
   	  <section id="profile-component">
-  	    <UserPhoto />
+      <h1>{this.props.currentConnection.firstName}</h1>
+      <h1>{this.props.currentConnection.lastName}</h1>
+      <h1>{this.props.currentConnection.username}</h1>
+  	    <UserPhoto photo={this.props.currentConnection.profileImageUrl} />
   	    <article id="user-summary">
-          Pithy user summary containing name, job, and general location here
+          <h1>{this.props.currentConnection.tagline}</h1>
         </article>
   	    <article id="user-description">
-  	      Abraham Lincoln
-  	      President
-  	      Into civil rights
-  	      1600 Pennsylvania Ave.
+  	      {this.props.currentConnection.company}
+          {this.props.currentConnection.location}
+          {this.props.currentConnection.field}
   	    </article>
   	  </section>
   	)
