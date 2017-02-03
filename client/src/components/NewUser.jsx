@@ -43,6 +43,7 @@ export default class NewUser extends React.Component {
 			'field: ', this.state.field,  '\n',
 			'tagline: ', this.state.tagline,  '\n',
 			'username: ', this.state.username,  '\n',
+>>>>>>> Adding database POST request
 			'profileImageUrl: ', this.state.profileImageUrl, '\n',
 			'password: ', this.state.password
       );
@@ -51,10 +52,8 @@ export default class NewUser extends React.Component {
     $.ajax({
       url: 'http://localhost:3000/api/users/',
       method: "POST",
-    	data: this.state,
-    	//data: JSON.stringify(this.state),
 
-
+    	data: JSON.stringify(this.state),
       success: function(){console.log("success");},
       error: function(){console.log("error");}
     })
@@ -210,8 +209,12 @@ export default class NewUser extends React.Component {
             <p> Drag and drop an image, or select file to upload.</p>
   	  	  </Dropzone>
           <div>
+<<<<<<< 3dca925054745664908e72fd288862878e4ad70f
 
             {this.state.profileImageUrl === '' ? null :
+=======
+            {this.state.profileImageUrl === '' ? null :
+>>>>>>> Adding database POST request
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>
