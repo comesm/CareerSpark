@@ -156,10 +156,6 @@ export default class NewUser extends React.Component {
 	  			</div>
 
 
-		  			<label>career field:
-			  			<select name="field" value={this.state.value} onChange={this.handleInputChange}>
-			  				<option value="Please_select_a_field">Please select a field</option>
-
 	  			<div>
 			  	  <label>
 	  					field:

@@ -5,6 +5,7 @@ import UserEntryView from './UserEntryView.jsx'
 import $ from 'jquery';
 import mockData from '../mockData.js'
 
+
 export default class App extends React.Component {
   constructor(props) {
   	super(props);
@@ -15,7 +16,10 @@ export default class App extends React.Component {
       pendingConnectionsOutgoing: [],
       acceptedConnections: [],
       suggestedConnections: [],
+<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
       dataFetched:false
+=======
+>>>>>>> Added basic swiping functionality
   	}
   }
 
@@ -53,13 +57,18 @@ export default class App extends React.Component {
   }
 
   // Dev Note: right now, we are hardwireing User1 as user to get on mount
+<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
   componentWillMount() {
+=======
+  componentDidMount() {
+>>>>>>> Added basic swiping functionality
     this.getUserInfo(1)
   }
 
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
 
   render() {
+<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
     var dataFetched = this.state.dataFetched;
     return (
       <div>
@@ -82,6 +91,15 @@ export default class App extends React.Component {
         {dataFetched ? <UserEntryView user={this.state} />: ''}
 >>>>>>> swiping works
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
+=======
+
+    return (
+      <div>
+        <Header />
+        <UserEntryView user={this.state} />
+        <button onClick={()=>{console.log(this.state)}}>console log state</button>
+        <button onClick={()=>{this.getImages()}}>Fetch images</button>
+>>>>>>> Added basic swiping functionality
       </div>
     )
   }

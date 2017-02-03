@@ -12,9 +12,13 @@ export default class UserEntryView extends React.Component {
     //   suggestedConnections: [],
     // }
   constructor(props) {
+<<<<<<< 7736abfd8dfa908b94720dca29c1203cf78795ce
 <<<<<<< 0af59b49e9ef7dfc8354e7e250bf2bda67ac2fbd
 
 =======
+=======
+<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
+>>>>>>> Added basic swiping functionality
     console.log('props', props)
 >>>>>>> swiping works
    super(props);
@@ -97,7 +101,11 @@ export default class UserEntryView extends React.Component {
              className="user-choice red-x"
              onClick={()=>{this.clickNo()}}
              />
+<<<<<<< 7736abfd8dfa908b94720dca29c1203cf78795ce
 <<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
+=======
+<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
+>>>>>>> Added basic swiping functionality
           <User currentConnection={this.state.current} />
 
 =======
