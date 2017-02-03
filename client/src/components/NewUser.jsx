@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+import $ from 'jquery';
 
 const _cloudinaryUploadPreset = 'profileImage'
 // Cloudinary API documentation: http://cloudinary.com/blog/restful_api_for_managing_your_website_s_images_and_other_online_assets
@@ -23,16 +24,41 @@ export default class NewUser extends React.Component {
 			password: '',
       profileImageUrl: '',
       // profileImage doesn't get sent to our server, but needs to be in state for rendering preview
-      profileImage: null
   	}
 
   	this.handleInputChange = this.handleInputChange.bind(this);
+  	this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+	handleSubmit(event) {
+		//request to server here
+    event.preventDefault();
+    console.log('Submit button clicked: ' + this.state.firstName);
+    alert('firstName: ', this.state.firstName, '\n',
+	    'lastName: ', this.state.lastName, '\n',
+			'phone: ',  this.state.phone,  '\n',
+			'location: ', this.state.location,  '\n', 
+			'company: ', this.state.company,  '\n', 
+			'field: ', this.state.field,  '\n',  
+			'tagline: ', this.state.tagline,  '\n', 
+			'username: ', this.state.username,  '\n', 
+			'profileImageUrl: ', this.state.profileImageUrl, '\n',
+			'password: ', this.state.password
+      );
+
+
+    $.ajax({
+      url: 'http://localhost:3000/api/users/',
+      method: "POST",
+    	data: JSON.stringify(this.state),
+      success: function(){console.log("success");},
+      error: function(){console.log("error");}
+    })
+  }
 
 	handleInputChange(event) {
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.value;
     const name = target.name;
 
     this.setState({
@@ -42,9 +68,9 @@ export default class NewUser extends React.Component {
 
   // sets file as profile image, then makes call to CloudinaryAPI
   handleImageDrop(files) {
-    this.setState({
-      profileImage: files[0]
-    });
+    // this.setState({
+    //   profileImage: files[0]
+    // });
     this.uploadImageToCloudinary(files[0])
   }
 
@@ -73,7 +99,7 @@ export default class NewUser extends React.Component {
   render() {
   	return (
   		<section id="new-user-component">
-  			<form>
+  			<form onSubmit={this.handleSubmit}>
 	  			<div>
 	  				<label>
 	  					First Name:
@@ -134,6 +160,14 @@ export default class NewUser extends React.Component {
 	  						onChange={this.handleInputChange} />
 	  				</label>
 	  			</div>
+		  			<label>Enter Your Field:
+			  			<select name="field">
+			  				<option value="Software">Software</option>
+			  				<option value="Hardware">Hardware</option>
+			  				<option value="Marketing">Marketing</option>
+			  				<option value="Management">Management</option>
+							</select>
+						</label>
 	  			<div>
 			  	  <label>
 	  					tagline:
@@ -164,6 +198,7 @@ export default class NewUser extends React.Component {
 	  						onChange={this.handleInputChange} />
 	  				</label>
 	  			</div>
+	  			<input type="submit" value="Submit" />
   	  	  <Dropzone
   	  	    multiple={false}
             accept="image/*"
@@ -171,7 +206,7 @@ export default class NewUser extends React.Component {
             <p> Drag and drop an image, or select file to upload.</p>
   	  	  </Dropzone>
           <div>
-            {this.state.profileImage === null ? null: 
+            {this.state.profileImageUrl === '' ? null : 
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>
@@ -179,6 +214,7 @@ export default class NewUser extends React.Component {
             }
           </div>
         </form>
+        <button onClick={()=>{console.log(this.state)}}>console log state</button>
   	  </section>
   	)
   }
