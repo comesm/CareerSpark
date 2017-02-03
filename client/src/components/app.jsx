@@ -23,7 +23,12 @@ export default class App extends React.Component {
     // this callback will take the data returned from the GET request, and setState with it.
     var callback = function(data) {
       console.log('GET request successful');
-      context.setState(data);
+      context.setState(data, function(){
+        //populate example data
+
+
+
+      });
     };
     // makes request to our server, and sets state through the callback
     $.ajax({

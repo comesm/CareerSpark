@@ -12,13 +12,18 @@ export default class UserEntryView extends React.Component {
     //   suggestedConnections: [],
     // }
   constructor(props) {
+<<<<<<< 4ae0f62771d428f7835b02a56b0a61cb78a35277
 <<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
+=======
+    console.log('15', props);
+>>>>>>> populate mock data, swiping working
    super(props);
    this.state = {current: this.props.user.pendingConnectionsIncoming[0],
      currentList: this.props.user.pendingConnectionsIncoming}
   }
 
   clickYes() {
+    console.log('21 YES');
     var currUser = this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
 
@@ -31,7 +36,7 @@ export default class UserEntryView extends React.Component {
     //suggestedConnections once we accept all pendingConnectionsIncoming
     if(this.state.currentList === this.props.user.pendingConnectionsIncoming) {
        //accept incoming connections
-       this.props.acceptedConnections.push(currUser);
+       this.props.user.acceptedConnections.push(currUser);
 
       if(this.props.user.pendingConnectionsIncoming.length === 0) {
         this.setState({currentList: this.props.user.suggestedConnections});
@@ -40,6 +45,8 @@ export default class UserEntryView extends React.Component {
   }
 
   clickNo() {
+        console.log('21 NO');
+
     if(this.props.user.pendingConnectionsIncoming.length === 0) {
         this.setState({currentList: this.props.user.suggestedConnections});
     }

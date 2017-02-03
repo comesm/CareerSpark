@@ -154,12 +154,12 @@ export default class NewUser extends React.Component {
 	  						onChange={this.handleInputChange} />
 	  				</label>
 	  			</div>
-<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
+
 
 		  			<label>career field:
 			  			<select name="field" value={this.state.value} onChange={this.handleInputChange}>
 			  				<option value="Please_select_a_field">Please select a field</option>
-=======
+
 	  			<div>
 			  	  <label>
 	  					field:
@@ -172,7 +172,7 @@ export default class NewUser extends React.Component {
 	  			</div>
 		  			<label>Enter Your Field:
 			  			<select name="field">
->>>>>>> Added basic swiping functionality
+
 			  				<option value="Software">Software</option>
 			  				<option value="Hardware">Hardware</option>
 			  				<option value="Marketing">Marketing</option>
