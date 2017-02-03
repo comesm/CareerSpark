@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import $ from 'jquery';
@@ -210,12 +209,8 @@ export default class NewUser extends React.Component {
             <p> Drag and drop an image, or select file to upload.</p>
   	  	  </Dropzone>
           <div>
-<<<<<<< 3dca925054745664908e72fd288862878e4ad70f
 
             {this.state.profileImageUrl === '' ? null :
-=======
-            {this.state.profileImageUrl === '' ? null :
->>>>>>> Adding database POST request
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>
