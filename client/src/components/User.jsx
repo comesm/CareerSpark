@@ -8,6 +8,7 @@ export default class User extends React.Component {
   	this.state = {
 
   	}
+
   }
 
   render() {
