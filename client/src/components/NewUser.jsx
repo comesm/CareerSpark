@@ -154,10 +154,25 @@ export default class NewUser extends React.Component {
 	  						onChange={this.handleInputChange} />
 	  				</label>
 	  			</div>
+<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
 
 		  			<label>career field:
 			  			<select name="field" value={this.state.value} onChange={this.handleInputChange}>
 			  				<option value="Please_select_a_field">Please select a field</option>
+=======
+	  			<div>
+			  	  <label>
+	  					field:
+	  					<input
+	  						name="field"
+	  						type="text"
+	  						value={this.state.field}
+	  						onChange={this.handleInputChange} />
+	  				</label>
+	  			</div>
+		  			<label>Enter Your Field:
+			  			<select name="field">
+>>>>>>> Added basic swiping functionality
 			  				<option value="Software">Software</option>
 			  				<option value="Hardware">Hardware</option>
 			  				<option value="Marketing">Marketing</option>
@@ -207,7 +222,11 @@ export default class NewUser extends React.Component {
   	  	  </Dropzone>
           <div>
 
+<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
             {this.state.profileImageUrl === '' ? null :
+=======
+            {this.state.profileImage === null ? null:
+>>>>>>> Added basic swiping functionality
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>

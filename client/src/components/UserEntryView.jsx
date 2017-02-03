@@ -12,6 +12,7 @@ export default class UserEntryView extends React.Component {
     //   suggestedConnections: [],
     // }
   constructor(props) {
+<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
    super(props);
    this.state = {current: this.props.user.pendingConnectionsIncoming[0],
      currentList: this.props.user.pendingConnectionsIncoming}
@@ -47,6 +48,32 @@ export default class UserEntryView extends React.Component {
 
 
 
+=======
+    super(props);
+    this.state.user = props.user;
+    //this.state.counter = 0;
+    // this.state.currentList =
+    //   props.pendingConnectionsIncoming.length > 0 ?
+    //   props.pendingConnectionsIncoming :
+    //   props.suggestedConnections;
+
+    this.state.counter = 0;
+  }
+
+  clickYes() {
+    console.log('added');
+    if(this.state.currentList === this.props.pendingConnectionsIncoming) {
+      if(this. props.pendingConnectionsIncoming.length === 0) {
+        this.setState({currentList: this.props.suggestedConnections});
+      }
+    }
+    this.state.currentList.splice()
+    props.acceptedConnections.push(this.state.user);
+  }
+
+  clickNo() {
+    console.log('rejected');
+>>>>>>> Added basic swiping functionality
   }
 
   render() {
@@ -57,8 +84,12 @@ export default class UserEntryView extends React.Component {
              className="user-choice red-x"
              onClick={()=>{this.clickNo()}}
              />
+<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
           <User currentConnection={this.state.current} />
 
+=======
+          <User currentConnection={this.state.user} />
+>>>>>>> Added basic swiping functionality
         <img src="./images/green-check.png"
              alt="click to approve"
              className="user-choice green-check"

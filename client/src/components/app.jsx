@@ -55,6 +55,7 @@ export default class App extends React.Component {
       <div>
         <Header />
         <UserEntryView user={this.state} />
+<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
         <img src="./images/red-x.png"
              alt="click to reject"
              className="user-choice red-x"
@@ -64,8 +65,10 @@ export default class App extends React.Component {
              alt="click to approve"
              className="user-choice green-check"
         />
+=======
+>>>>>>> Added basic swiping functionality
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
-
+        <button onClick={()=>{this.getImages()}}>Fetch images</button>
       </div>
     )
   }
