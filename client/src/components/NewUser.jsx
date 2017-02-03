@@ -60,10 +60,6 @@ export default class NewUser extends React.Component {
     })
   }
 
-	handleChange(event) {
-    this.setState({field: event.target.field});
-  }
-
 	handleInputChange(event) {
     const target = event.target;
     const value = target.value;
