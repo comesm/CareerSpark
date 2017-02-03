@@ -27,6 +27,7 @@ export default class NewUser extends React.Component {
   	}
 
   	this.handleInputChange = this.handleInputChange.bind(this);
+
   	this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -153,22 +154,18 @@ export default class NewUser extends React.Component {
 	  						onChange={this.handleInputChange} />
 	  				</label>
 	  			</div>
-	  			<div>
-			  	  <label>
-	  					field:
-	  					<input
-	  						name="field"
-	  						type="text"
-	  						value={this.state.field}
-	  						onChange={this.handleInputChange} />
-	  				</label>
-	  			</div>
-		  			<label>Enter Your Field:
-			  			<select name="field">
+
+		  			<label>career field:
+			  			<select name="field" value={this.state.value} onChange={this.handleInputChange}>
+			  				<option value="Please_select_a_field">Please select a field</option>
 			  				<option value="Software">Software</option>
 			  				<option value="Hardware">Hardware</option>
 			  				<option value="Marketing">Marketing</option>
 			  				<option value="Management">Management</option>
+			  				<option value="Quality_Assurance">Quality Assurance</option>
+			  				<option value="Customer_Support">Customer Support</option>
+			  				<option value="Sales">Sales</option>
+			  				<option value="Computer_Service">Computer Service</option>
 							</select>
 						</label>
 	  			<div>
