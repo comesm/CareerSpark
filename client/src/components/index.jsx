@@ -13,9 +13,7 @@ render(
 , document.getElementById('app'));
 
 /********
-
 DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented out code for what's below
-
 ********/
 
 
@@ -29,3 +27,13 @@ DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented ou
 //     <Route path="/signup" component={SignUp} />
 //   </Router>)
 // , document.getElementById('app'));
+
+render(
+(
+  <Router history={browserHistory}>
+    <Route path="/" component={App} />
+    <Route path="/about" component={About} />
+    <Route path="/profile" component={Profile} />
+    <Route path="/signup" component={SignUp} />
+  </Router>)
+, document.getElementById('app'));

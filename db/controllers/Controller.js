@@ -14,13 +14,11 @@ exports.getUserId = function(username, callback) {
   });
 }
 
-
 exports.findAllUsers = function(callback) {
   model.Users.findAll().then(function(result) {
      callback(result);
   })
 }
-
 
 exports.findUserById = function(id, callback) {
   model.Users.findOne({
@@ -34,6 +32,7 @@ exports.findUserByUserName = function(username, callback) {
   model.Users.findAll({where: {username: username}}).
     then(function(results) {callback(results)});
 }
+
 
 exports.findAllUsersByLocation = function(location, callback) {
   model.Users.findAll({
@@ -126,6 +125,33 @@ exports.deleteConnection = function(userId, connectionId, callback) {
       ConnectionUserId: connectionId
     }
   })
+}
+exports.addConnection = function(myUserId, otherPersonId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: otherPersonId})
+      .then(function(result) {callback(result)}).catch(function(err) {});
+}
+
+exports.addConnection = function(myUserId, otherPersonId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: otherPersonId})
+      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
+}
+
+exports.addConnection = function(myUserId, otherPersonId, callback) {
+  model.Connections.create({userUserId: myUserId,
+    ConnectionUserId: otherPersonId})
+      .then(function(result) {callback(result)}).catch(function(err) {console.log('54', err)});
+}
+
+exports.getConnections = function(userId, callback) {
+  model.Connections.findAll({where:  {userUserId:userId}})
+    .then(function(result) {callback(result)});
+}
+
+exports.deleteConnection = function(userId, connectionId, callback) {
+  model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
+    .then(function(deleted) {callback(deleted)});
 }
 
 exports.getConnections = function(userId, callback) {
