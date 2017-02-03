@@ -12,8 +12,13 @@ router.route('/')
   })
   // posts new connection, and returns it. *TO DO: error handling (e.g., when connection already exists)
   .post(function(req, res) {
-  	var userId1 = req.body.sourceUserId;
+  	console.log('HANDLING POST REQUEST');
+
+    var userId1 = req.body.sourceUserId;
   	var userId2 = req.body.targetUserId;
+
+    console.log(userId1)
+    console.log(userId2)
   	db.addConnection(userId1,userId2, function(result) {
   		res.send(result.dataValues)
   	})

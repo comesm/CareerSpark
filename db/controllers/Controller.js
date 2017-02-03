@@ -42,6 +42,7 @@ exports.findAllUsersByLocation = function(location, callback) {
   }).then(function(results) {callback(results)});
 }
 
+
 exports.findAllUsersByLocationAndField = function(location, field, callback) {
   model.Users.findAll({
     where: {
@@ -151,6 +152,11 @@ exports.getConnections = function(userId, callback) {
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
     .then(function(deleted) {callback(deleted)});
+}
+
+exports.getConnections = function(userId, callback) {
+  model.Connections.findAll({where:  {userUserId:userId}})
+    .then(function(result) {callback(result)});
 }
 
 
