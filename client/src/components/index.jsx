@@ -24,7 +24,6 @@ render(
   <Router history={browserHistory}>
     <Route path="/" component={App} />
     <Route path="/about" component={About} />
-    <Route path="/newuser" component={NewUser} />
     <Route path="/profile" component={Profile} />
     <Route path="/signup" component={SignUp} />
   </Router>)

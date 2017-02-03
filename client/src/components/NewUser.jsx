@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import $ from 'jquery';
