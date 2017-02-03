@@ -19,7 +19,6 @@ DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented ou
 ********/
 
 
-<<<<<<< f4f85eabe7c0114a35a04cd99c6396c3ff8f8ea5
 // render(
 // (
 //   <Router history={browserHistory}>
@@ -33,7 +32,6 @@ DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented ou
 //     <Route path="/signup" component={SignUp} />
 //   </Router>)
 // , document.getElementById('app'));
-=======
 render(
 (
   <Router history={browserHistory}>
@@ -45,4 +43,4 @@ render(
     <Route path="/signup" component={SignUp} />
   </Router>)
 , document.getElementById('app'));
->>>>>>> (client) Deleted unused component (router.jsx) and updated es5 syntax to
+

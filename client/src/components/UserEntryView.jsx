@@ -12,21 +12,10 @@ export default class UserEntryView extends React.Component {
     //   suggestedConnections: [],
     // }
   constructor(props) {
-<<<<<<< 7736abfd8dfa908b94720dca29c1203cf78795ce
-<<<<<<< 0af59b49e9ef7dfc8354e7e250bf2bda67ac2fbd
 
-=======
-=======
-<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
->>>>>>> Added basic swiping functionality
-    console.log('props', props)
->>>>>>> swiping works
    super(props);
    this.state = {current: this.props.user.pendingConnectionsIncoming[0],
      currentList: this.props.user.pendingConnectionsIncoming}
-  }
-  componentDidMount() {
-
   }
 
   clickYes() {
@@ -65,32 +54,6 @@ export default class UserEntryView extends React.Component {
 
     console.log('after no current', this.state.current);
 
-=======
-    super(props);
-    this.state.user = props.user;
-    //this.state.counter = 0;
-    // this.state.currentList =
-    //   props.pendingConnectionsIncoming.length > 0 ?
-    //   props.pendingConnectionsIncoming :
-    //   props.suggestedConnections;
-
-    this.state.counter = 0;
-  }
-
-  clickYes() {
-    console.log('added');
-    if(this.state.currentList === this.props.pendingConnectionsIncoming) {
-      if(this. props.pendingConnectionsIncoming.length === 0) {
-        this.setState({currentList: this.props.suggestedConnections});
-      }
-    }
-    this.state.currentList.splice()
-    props.acceptedConnections.push(this.state.user);
-  }
-
-  clickNo() {
-    console.log('rejected');
->>>>>>> Added basic swiping functionality
   }
 
   render() {
@@ -101,16 +64,10 @@ export default class UserEntryView extends React.Component {
              className="user-choice red-x"
              onClick={()=>{this.clickNo()}}
              />
-<<<<<<< 7736abfd8dfa908b94720dca29c1203cf78795ce
-<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
-=======
-<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
->>>>>>> Added basic swiping functionality
+
           <User currentConnection={this.state.current} />
 
-=======
-          <User currentConnection={this.state.user} />
->>>>>>> Added basic swiping functionality
+
         <img src="./images/green-check.png"
              alt="click to approve"
              className="user-choice green-check"

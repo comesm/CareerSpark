@@ -16,10 +16,7 @@ export default class App extends React.Component {
       pendingConnectionsOutgoing: [],
       acceptedConnections: [],
       suggestedConnections: [],
-<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
       dataFetched:false
-=======
->>>>>>> Added basic swiping functionality
   	}
   }
 
@@ -57,49 +54,21 @@ export default class App extends React.Component {
   }
 
   // Dev Note: right now, we are hardwireing User1 as user to get on mount
-<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
+
   componentWillMount() {
-=======
-  componentDidMount() {
->>>>>>> Added basic swiping functionality
     this.getUserInfo(1)
   }
 
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
 
   render() {
-<<<<<<< 54c3be42688e1cdaf3afd6ad740cfcbc28b2c97b
     var dataFetched = this.state.dataFetched;
     return (
       <div>
         <Header />
-<<<<<<< 0af59b49e9ef7dfc8354e7e250bf2bda67ac2fbd
-        <UserEntryView user={this.state} />
-<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
-        <img src="./images/red-x.png"
-             alt="click to reject"
-             className="user-choice red-x"
-        />
-        <User />
-        <img src="./images/green-check.png"
-             alt="click to approve"
-             className="user-choice green-check"
-        />
-=======
->>>>>>> Added basic swiping functionality
-=======
-        {dataFetched ? <UserEntryView user={this.state} />: ''}
->>>>>>> swiping works
-        <button onClick={()=>{console.log(this.state)}}>console log state</button>
-=======
 
-    return (
-      <div>
-        <Header />
-        <UserEntryView user={this.state} />
+        {dataFetched ? <UserEntryView user={this.state} />: ''}
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
-        <button onClick={()=>{this.getImages()}}>Fetch images</button>
->>>>>>> Added basic swiping functionality
       </div>
     )
   }

@@ -218,11 +218,8 @@ export default class NewUser extends React.Component {
   	  	  </Dropzone>
           <div>
 
-<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
-            {this.state.profileImageUrl === '' ? null :
-=======
+
             {this.state.profileImage === null ? null:
->>>>>>> Added basic swiping functionality
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>

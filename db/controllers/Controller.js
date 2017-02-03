@@ -143,7 +143,6 @@ exports.getConnections = function(userId, callback) {
     .then(function(result) {callback(result)});
 }
 
-<<<<<<< 0b71bd8e41233fcaebd74d9616fad5434f5fdbe0
 exports.deleteConnection = function(userId, connectionId, callback) {
   model.Connections.destroy({where:{userUserId:userId, ConnectionUserId: connectionId}})
     .then(function(deleted) {callback(deleted)});
@@ -176,7 +175,5 @@ exports.deleteConnection = function(userId, connectionId, callback) {
     .then(function(deleted) {callback(deleted)});
 }
 
-=======
->>>>>>> (server/db) changed data returned from GET user request, debugged POST connection
 
 
