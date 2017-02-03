@@ -127,6 +127,53 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
+<<<<<<< fb30a99ed19ddac0122235935e5f04157dc3e631
+=======
+                 expect(results.length).to.equal(1);
+                 expect(results[0].dataValues.username).to.equal('smartPerson12');
+                 done();
+                })
+              });
+            });
+        });
+    });
+
+    describe('test our self-referential connections table', function() {
+
+      it('should add and fetch a userId connection', function(done) {
+        controller.getUserId('comesm', function(uId) {
+          controller.getUserId('smartPerson12', function(tId) {
+          controller.addConnection(uId, tId, function(result) {
+            controller.getConnections(uId, function(result) {
+              expect(result[0].dataValues.ConnectionUserId).to.equal(tId);
+              done();
+            });
+          });
+          });
+         });
+      });
+      it('should add delete connections', function(done) {
+        controller.getUserId('comesm', function(uId) {
+          controller.getUserId('smartPerson12', function(tId) {
+          controller.addConnection(uId, tId, function(result) {
+              controller.deleteConnection(uId, tId, function(deletedConnection) {
+               controller.getConnections(uId, function(result) {
+                expect(result.length).to.equal(0)
+                done();
+              })
+            });
+          });
+          });
+         });
+      });
+    });
+
+      it('should delete user', function(done) {
+
+          controller.getUserId('comesm', function(id) {
+              controller.deleteUser(id, function() {
+                controller.findAllUsers(function(results) {
+>>>>>>> mock data add, stateful component:
 
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
@@ -184,7 +231,7 @@ describe('Users', function() {
               });
             });
         });
-    });
+
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {

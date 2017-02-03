@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import User from './User.jsx';
 import UserEntryView from './UserEntryView.jsx'
 import $ from 'jquery';
-
+import mockData from '../mockData.js'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -22,12 +22,16 @@ export default class App extends React.Component {
     var context = this;
     // this callback will take the data returned from the GET request, and setState with it.
     var callback = function(data) {
+      console.log('25', data);
       console.log('GET request successful');
-      context.setState(data, function(){
-        //populate example data
-
-
-
+      context.setState({
+        user: data.user,
+        acceptedConnections: mockData.acceptedConnections,
+        pendingConnectionsIncoming: mockData.pendingConnectionsIncoming,
+        pendingConnectionsOutgoing: mockData.pendingConnectionsOutgoing,
+        suggestedConnections: mockData.suggestedConnections
+      }, function() {
+        console.log('updated Data', this.state);
       });
     };
     // makes request to our server, and sets state through the callback
@@ -48,7 +52,7 @@ export default class App extends React.Component {
   }
 
   // Dev Note: right now, we are hardwireing User1 as user to get on mount
-  componentDidMount() {
+  componentWillMount() {
     this.getUserInfo(1)
   }
 

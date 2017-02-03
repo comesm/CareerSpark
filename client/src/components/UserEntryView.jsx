@@ -12,18 +12,17 @@ export default class UserEntryView extends React.Component {
     //   suggestedConnections: [],
     // }
   constructor(props) {
-<<<<<<< 4ae0f62771d428f7835b02a56b0a61cb78a35277
-<<<<<<< 30eb4b88847b69a702936449c73d73bcd3d065a0
-=======
-    console.log('15', props);
->>>>>>> populate mock data, swiping working
+
    super(props);
    this.state = {current: this.props.user.pendingConnectionsIncoming[0],
      currentList: this.props.user.pendingConnectionsIncoming}
   }
+  componentWillMount() {
+
+  }
 
   clickYes() {
-    console.log('21 YES');
+    console.log('yes');
     var currUser = this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
 
