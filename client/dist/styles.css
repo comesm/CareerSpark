@@ -7,6 +7,16 @@
   font-style: italic;
 }
 
+#Nav {
+  text-align: center;
+}
+
+#Nav li {
+  display: inline-block;
+  margin: 0 100px 0 100px;
+  list-style-type: none;
+}
+
 .user-choice {
   display: inline-block;
   margin-top: 17%;
