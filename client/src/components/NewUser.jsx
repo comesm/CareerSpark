@@ -209,8 +209,7 @@ export default class NewUser extends React.Component {
   	  	  </Dropzone>
           <div>
 
-
-            {this.state.profileImageUrl === '' ? null :
+            {this.state.profileImage === null ? null:
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>

@@ -46,6 +46,7 @@ export default class UserEntryView extends React.Component {
     this.setState({current: this.state.currentList[0]});
 
 
+
   }
 
   render() {
@@ -57,6 +58,7 @@ export default class UserEntryView extends React.Component {
              onClick={()=>{this.clickNo()}}
              />
           <User currentConnection={this.state.current} />
+
         <img src="./images/green-check.png"
              alt="click to approve"
              className="user-choice green-check"
