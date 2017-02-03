@@ -50,7 +50,9 @@ export default class NewUser extends React.Component {
     $.ajax({
       url: 'http://localhost:3000/api/users/',
       method: "POST",
-    	data: JSON.stringify(this.state),
+    	data: this.state,
+    	//data: JSON.stringify(this.state),
+
       success: function(){console.log("success");},
       error: function(){console.log("error");}
     })
