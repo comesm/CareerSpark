@@ -135,7 +135,6 @@ describe('Users', function() {
             });
         });
     });
-    
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
@@ -171,7 +170,6 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
-
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
                  done();
@@ -209,8 +207,8 @@ describe('Users', function() {
           });
          });
       });
-
     });
+
 
       it('should delete user', function(done) {
 
@@ -224,7 +222,7 @@ describe('Users', function() {
               });
             });
         });
-    });
+
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
@@ -255,7 +253,8 @@ describe('Users', function() {
       });
 
     });
-  };
+  });
+
 
 
 
