@@ -63,6 +63,7 @@ export default class App extends React.Component {
 
   render() {
     console.log('app/index view this.props:',this.props);
+    console.log('mockData:',mockData);
 
     var dataFetched = this.state.dataFetched;
     console.log('dataFetched: ',this.state.dataFetched);
