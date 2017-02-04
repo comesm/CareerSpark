@@ -24,7 +24,7 @@ export default class UserEntryView extends React.Component {
     this.setState({current: this.state.currentList[0]});
 
     if(this.state.currentList === this.props.user.suggestedConnections) {
-      //click 'yes' on suggestedConnection - add to pending outGoing connection
+      //click 'yes' on the suggestedConnection - add to pending outGoing connection
       this.props.user.pendingConnectionsOutgoing.push(currUser);
     }
 
