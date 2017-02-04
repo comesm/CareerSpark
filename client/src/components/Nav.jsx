@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 export default class Nav extends React.Component {
   render() {
 
-  	return (
-  	  <ul id="nav">
+    return (
+      <ul id="nav">
         <li>
           <Link to="/" 
                 style={{"textDecoration":"none"}}
@@ -24,7 +24,13 @@ export default class Nav extends React.Component {
                 activeClassName="active">About
           </Link>
         </li>
-  	  </ul>
-  	)
+        <li>
+          <Link to="/SignUp"
+                style={{"textDecoration":"none"}}
+                activeClassName="active">SignUp
+          </Link>
+        </li>
+      </ul>
+    )
   }
 }

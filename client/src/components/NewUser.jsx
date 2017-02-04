@@ -101,6 +101,7 @@ export default class NewUser extends React.Component {
   render() {
   	return (
   		<section id="new-user-component">
+  		<h3>New User Sign Up</h3>
   			<form onSubmit={this.handleSubmit}>
 	  			<div>
 	  				<label>
