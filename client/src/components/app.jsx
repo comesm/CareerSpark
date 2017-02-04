@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from './Header.jsx';
-
 import User from './User.jsx';
+import UserEntryView from './UserEntryView.jsx'
 import $ from 'jquery';
+import mockData from '../mockData.js'
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ export default class App extends React.Component {
       pendingConnectionsOutgoing: [],
       acceptedConnections: [],
       suggestedConnections: [],
-      userList: []
+      dataFetched:false
   	}
   }
 
@@ -22,8 +24,17 @@ export default class App extends React.Component {
     var context = this;
     // this callback will take the data returned from the GET request, and setState with it.
     var callback = function(data) {
+      console.log('25', data);
       console.log('GET request successful');
-      context.setState(data);
+      context.setState({
+        user: data.user,
+        acceptedConnections: mockData.acceptedConnections,
+        pendingConnectionsIncoming: mockData.pendingConnectionsIncoming,
+        pendingConnectionsOutgoing: mockData.pendingConnectionsOutgoing,
+        suggestedConnections: mockData.suggestedConnections,
+        dataFetched:true
+      }, function() {
+      });
     };
     // makes request to our server, and sets state through the callback
     $.ajax({
@@ -34,9 +45,17 @@ export default class App extends React.Component {
     })
   }
 
+  getImages() {
+    // console.log('39');
+    // $.ajax({
+    //   url:
+    // })
+
+  }
+
   // Dev Note: right now, we are hardwireing User1 as user to get on mount
-  componentDidMount() {
-    console.log('hello component')
+
+  componentWillMount() {
     this.getUserInfo(1)
   }
 
@@ -45,24 +64,19 @@ export default class App extends React.Component {
   render() {
     console.log('app/index view this.props:',this.props);
 
+    var dataFetched = this.state.dataFetched;
+    console.log('dataFetched: ',this.state.dataFetched);
     return (
       <div>
         <Header />
-        <img src="./images/red-x.png"
-             alt="click to reject"
-             className="user-choice red-x"
-        />
-        <User />
-        <img src="./images/green-check.png"
-             alt="click to approve"
-             className="user-choice green-check"
-        />
-        <button onClick={()=>{console.log(this.state)}}>console log state</button>
 
+        {dataFetched ? <UserEntryView user={this.state} />: ''}
+        <button onClick={()=>{console.log(this.state)}}>console log state</button>
       </div>
     )
   }
 }
+
   /********
 
   Below is a sample AJAX request (using jquery) to our server. I haven't written the url route yet,
@@ -92,4 +106,5 @@ export default class App extends React.Component {
   //     success: callback,
   //     error: callback
   //   })
+
 

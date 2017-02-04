@@ -4,24 +4,24 @@ import UserPhoto from './UserPhoto.jsx'; //may need {UserPhoto}
 export default class User extends React.Component {
   constructor(props) {
   	super(props);
-
-  	this.state = {
-
-  	}
-  }
+      this.state = this.props;
+    }
 
   render() {
+    console.log('14', this.props);
   	return (
   	  <section id="profile-component">
-  	    <UserPhoto />
+      <h1>{this.props.currentConnection.firstName}</h1>
+      <h1>{this.props.currentConnection.lastName}</h1>
+      <h1>{this.props.currentConnection.username}</h1>
+  	    <UserPhoto photo={this.props.currentConnection.profileImageUrl} />
   	    <article id="user-summary">
-          Pithy user summary containing name, job, and general location here
+          <h1>{this.props.currentConnection.tagline}</h1>
         </article>
   	    <article id="user-description">
-  	      Abraham Lincoln
-  	      President
-  	      Into civil rights
-  	      1600 Pennsylvania Ave.
+  	      {this.props.currentConnection.company}
+          {this.props.currentConnection.location}
+          {this.props.currentConnection.field}
   	    </article>
   	  </section>
   	)
