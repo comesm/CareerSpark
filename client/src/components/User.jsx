@@ -8,7 +8,6 @@ export default class User extends React.Component {
     }
 
   render() {
-    console.log('14', this.props);
   	return (
   	  <section id="profile-component">
       <h1>{this.props.currentConnection.firstName}</h1>

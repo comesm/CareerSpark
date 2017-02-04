@@ -24,8 +24,6 @@ export default class App extends React.Component {
     var context = this;
     // this callback will take the data returned from the GET request, and setState with it.
     var callback = function(data) {
-      console.log('25', data);
-      console.log('GET request successful');
       context.setState({
         user: data.user,
         acceptedConnections: mockData.acceptedConnections,
@@ -62,10 +60,8 @@ export default class App extends React.Component {
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
 
   render() {
-    console.log('app/index view this.props:',this.props);
 
     var dataFetched = this.state.dataFetched;
-    console.log('dataFetched: ',this.state.dataFetched);
     return (
       <div>
         <Header />
