@@ -1,20 +1,63 @@
+/**
+/*  Header Component Styling
+**/
+
 #header {
   text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 40px;
 }
 
 #sub-header {
+  margin-top: 5px;
+  margin-bottom: 0;
   text-align: center;
   font-style: italic;
 }
 
-#Nav {
-  text-align: center;
+/* cascading webkit styling */
+#Supercharge {
+  color: black;
+    -webkit-text-fill-color: yellow; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
-#Nav li {
+/* flavicon */
+/*lightning bolt picture here: https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Harry_Potter_Lightning.svg/1000px-Harry_Potter_Lightning.svg.png*/
+#lightningBolt {
+  /*display: inline-block;*/
+  height: 30px;
+  width: 30px;
+  position: absolute;
+}
+
+/**
+/*  Nav Component Styling
+**/
+
+#nav {
+  text-align: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 10px 0 10px 0;
+}
+
+#nav li {
   display: inline-block;
   margin: 0 100px 0 100px;
   list-style-type: none;
+}
+
+#nav li:hover {
+  text-decoration: underline;
+}
+
+/* Nav Active Link Styling */
+.active {
+  color: black;
+  font-weight: bold;
 }
 
 .user-choice {
@@ -58,10 +101,91 @@
 }
 
 /**
-/*  Nav Active Link Styling
+/*  Profile Component Styling
 **/
 
-.active {
-  color: black;
-  font-weight: bold;
+
+
+/**
+/*  Connections Component Styling
+**/
+
+#connectionsViewContainer {
+}
+
+#connectionsView {
+  display: block;
+  border: 2px solid black;
+  width: 25%;
+  max-height: 525px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+#connectionsView tr, #connectionsView th, #connectionsView td {
+  display: block;
+}
+
+#connectionsHeader {
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 20px;
+  margin-left: -200px;
+  border-bottom: 1px solid black;
+}
+
+td {
+  text-align: center;
+  padding: 8px;
+  margin-left: -200px;
+  font-size: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/**
+/*  Hovering Tooltip Styling
+**/
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* tool-tip box */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 218px;
+    height: auto;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -45%;
+    left: 61%;
+}
+
+/* tooltip-left arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
