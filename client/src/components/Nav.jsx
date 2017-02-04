@@ -25,7 +25,6 @@ export default class Nav extends React.Component {
           </Link>
         </li>
   	  </ul>
-
   	)
   }
 }
