@@ -5,7 +5,7 @@ import User from './User.jsx'
 export default class UserEntryView extends React.Component {
 
     // this.state = {
-    //   user: {},
+    //   user: {} ,
     //   pendingConnectionsIncoming: [],
     //   pendingConnectionsOutgoing: [],
     //   acceptedConnections: [],
