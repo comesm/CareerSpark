@@ -8,9 +8,9 @@ import NewUser from './NewUser.jsx';
 import Profile from './Profile.jsx';
 import SignUp from './Signup.jsx';
 
-render(
-  <SignUp />
-, document.getElementById('app'));
+// render(
+//   <SignUp />
+// , document.getElementById('app'));
 
 /********
 DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented out code for what's below
