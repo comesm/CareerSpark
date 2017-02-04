@@ -34,7 +34,7 @@ export default class UserEntryView extends React.Component {
        //accept incoming connections
        this.props.user.acceptedConnections.push(currUser);
 
-      if(this.props.user.pendingConnectionsIncoming.length === 0) {
+      if(this.props.user.pendingConnectionsIncoming.length === 1) {
         this.setState({currentList: this.props.user.suggestedConnections});
       }
     }
@@ -44,12 +44,12 @@ export default class UserEntryView extends React.Component {
 
   clickNo() {
     console.log('before no current', this.state.current);
-
-    if(this.props.user.pendingConnectionsIncoming.length === 0) {
-        this.setState({currentList: this.props.user.suggestedConnections});
-    }
     this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
+
+    if(this.props.user.pendingConnectionsIncoming.length === 1) {
+        this.setState({currentList: this.props.user.suggestedConnections});
+    }
 
 
     console.log('after no current', this.state.current);
