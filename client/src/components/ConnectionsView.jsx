@@ -13,8 +13,8 @@ export default class ConnectionsView extends React.Component {
 
   render() {
   	var contactList = dummyData.map((node, idx) => (
-	  <ConnectionsViewEntry node={node} key={idx} />
-	))
+	    <ConnectionsViewEntry node={node} key={idx} />
+	  ))
 
   	/*
   	 * Once props data is available, swap out above the above dummy-data setup for below

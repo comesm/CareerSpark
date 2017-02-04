@@ -33,7 +33,7 @@ exports.acceptedConnections = [
       username: 'John',
       password: 'Smith',
       profileImageUrl: 'https://www.biography.com/.image/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTc0MTk1NzI0/john-smith-9486928-1-402.jpg'},
-]
+];
 
 exports.suggestedConnections =[
  {firstName: 'Tim',
@@ -79,8 +79,7 @@ exports.suggestedConnections =[
       username: 'Michael',
       password: 'James',
       profileImageUrl: 'https://pbs.twimg.com/profile_images/761986102676729856/R_hXAukf.jpg'},
-
-]
+];
 
 exports.pendingConnectionsIncoming = [
  {firstName: 'Mick',
@@ -125,7 +124,8 @@ exports.pendingConnectionsIncoming = [
       tagline: 'never gonna give you up',
       username: 'Rick',
       password: 'Astley',
-      profileImageUrl: 'http://i234.photobucket.com/albums/ee136/suwarnaadi/hair/rick-astley-80s-hairstyle.jpg'}]
+      profileImageUrl: 'http://i234.photobucket.com/albums/ee136/suwarnaadi/hair/rick-astley-80s-hairstyle.jpg'}
+];
 
 
 exports.pendingConnectionsOutgoing = [
@@ -171,7 +171,8 @@ exports.pendingConnectionsOutgoing = [
       tagline: 'your best friend',
       username: 'Jack',
       password: 'Daniels',
-      profileImageUrl: 'https://s3-us-west-2.amazonaws.com/find-a-grave-prod/photos/2009/248/1556_125221940406.jpg'}]
+      profileImageUrl: 'https://s3-us-west-2.amazonaws.com/find-a-grave-prod/photos/2009/248/1556_125221940406.jpg'}
+];
 
 
 
