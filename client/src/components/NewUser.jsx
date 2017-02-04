@@ -4,7 +4,7 @@ import request from 'superagent';
 import $ from 'jquery';
 
 const _cloudinaryUploadPreset = 'profileImage'
-// Cloudinary API documentation: http://cloudinary.com/blog/restful_api_for_managing_your_website_s_images_and_other_online_assets
+// Cloudinary API for documentation: http://cloudinary.com/blog/restful_api_for_managing_your_website_s_images_and_other_online_assets
 const _cloudinaryUploadUrl = 'https://api.cloudinary.com/v1_1/baggins/upload'
 
 
