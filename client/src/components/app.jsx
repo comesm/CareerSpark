@@ -73,6 +73,7 @@ export default class App extends React.Component {
     )
   }
 }
+
   /********
 
   Below is a sample AJAX request (using jquery) to our server. I haven't written the url route yet,
@@ -102,4 +103,5 @@ export default class App extends React.Component {
   //     success: callback,
   //     error: callback
   //   })
+
 

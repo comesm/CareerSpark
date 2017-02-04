@@ -127,8 +127,6 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
-<<<<<<< fb30a99ed19ddac0122235935e5f04157dc3e631
-=======
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
                  done();
@@ -137,7 +135,6 @@ describe('Users', function() {
             });
         });
     });
-
     describe('test our self-referential connections table', function() {
 
       it('should add and fetch a userId connection', function(done) {
@@ -173,8 +170,6 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
->>>>>>> mock data add, stateful component:
-
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
                  done();
@@ -220,10 +215,6 @@ describe('Users', function() {
           controller.getUserId('comesm', function(id) {
               controller.deleteUser(id, function() {
                 controller.findAllUsers(function(results) {
-<<<<<<< 35f81129df3c3573616bcfc29246e2aa2d09e43e
-
-=======
->>>>>>> finish tests for all tables
                  expect(results.length).to.equal(1);
                  expect(results[0].dataValues.username).to.equal('smartPerson12');
                  done();
@@ -262,14 +253,8 @@ describe('Users', function() {
       });
 
     });
-<<<<<<< 35f81129df3c3573616bcfc29246e2aa2d09e43e
-  };
-
-  };
-  };
-=======
   });
->>>>>>> finish tests for all tables
+
 
 
 

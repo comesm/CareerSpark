@@ -25,7 +25,6 @@ export default class NewUser extends React.Component {
       profileImageUrl: '',
       // profileImage doesn't get sent to our server, but needs to be in state for rendering preview
   	}
-
   	this.handleInputChange = this.handleInputChange.bind(this);
 
   	this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,7 +53,6 @@ export default class NewUser extends React.Component {
 
     	data: this.state,
     	//data: JSON.stringify(this.state),
-
       success: function(){console.log("success");},
       error: function(){console.log("error");}
     })
@@ -154,21 +152,9 @@ export default class NewUser extends React.Component {
 	  						onChange={this.handleInputChange} />
 	  				</label>
 	  			</div>
-
-
-	  			<div>
-			  	  <label>
-	  					field:
-	  					<input
-	  						name="field"
-	  						type="text"
-	  						value={this.state.field}
-	  						onChange={this.handleInputChange} />
-	  				</label>
-	  			</div>
-		  			<label>Enter Your Field:
-			  			<select name="field">
-
+		  			<label>career field:
+			  			<select name="field" value={this.state.value} onChange={this.handleInputChange}>
+			  				<option value="Please_select_a_field">Please select a field</option>
 			  				<option value="Software">Software</option>
 			  				<option value="Hardware">Hardware</option>
 			  				<option value="Marketing">Marketing</option>

@@ -175,5 +175,10 @@ exports.deleteConnection = function(userId, connectionId, callback) {
     .then(function(deleted) {callback(deleted)});
 }
 
+exports.getConnections = function(userId, callback) {
+  model.Connections.findAll({where:  {userUserId:userId}})
+    .then(function(result) {callback(result)});
+}
+
 
 
