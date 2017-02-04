@@ -205,7 +205,7 @@ export default class NewUser extends React.Component {
           <div>
 
 
-            {this.state.profileImage === null ? null:
+            {this.state.profileImageUrl === '' ? null:
               <div>
               <p>Preview Profile Image:</p>
               <img src={this.state.profileImageUrl}></img>
