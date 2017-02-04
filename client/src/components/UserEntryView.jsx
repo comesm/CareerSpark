@@ -36,11 +36,13 @@ export default class UserEntryView extends React.Component {
       if(this.props.user.pendingConnectionsIncoming.length === 0) {
         this.setState({currentList: this.props.user.suggestedConnections,
           current: this.props.user.suggestedConnections[0]});
+
       }
     }
   }
 
   clickNo() {
+
     this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
 
