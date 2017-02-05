@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from './Header.jsx';
 import User from './User.jsx';
-import UserEntryView from './UserEntryView.jsx'
+import UserEntryView from './UserEntryView.jsx';
+import Nav from './Nav.jsx';
 import $ from 'jquery';
-import mockData from '../mockData.js'
+import mockData from '../mockData.js';
 
 
 export default class App extends React.Component {
@@ -67,6 +68,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
+        <Nav />
 
         {dataFetched ? <UserEntryView user={this.state} />: ''}
         <button onClick={()=>{console.log(this.state)}}>console log state</button>
