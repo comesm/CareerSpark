@@ -31,7 +31,7 @@ export default class ConnectionsView extends React.Component {
   	  <div id="connectionsViewContainer">
         <table id="connectionsView">
           <tr>
-        	<th id="connectionsHeader">Connections</th>
+        	  <th>Connections</th>
           </tr>
           {contactList}
         </table>

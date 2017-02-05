@@ -67,18 +67,23 @@
   width: 150px;
 }
 
+/**
+/*  PendingConnectionsView Component Styling (inside '/' view)
+**/
+
+#pendingConnectionsView tr, #pendingConnectionsView th, #pendingConnectionsView td {
+  display: block;
+  text-align: center;
+}
+
+#pendingConnectionsHeader {
+  margin-left: auto;
+}
+
 .red-x {
   margin-left: 26%;
 }
 
-#profile-component {
-  display: inline-block;
-  height: 600px;
-  width: 400px;
-  border: 5px solid black;
-  margin: 40px 30px 0 30px;
-  vertical-align: top;
-}
 
 #user-summary {
   text-align: center;
@@ -104,16 +109,20 @@
 /*  Profile Component Styling
 **/
 
-
+/*#profile-component {
+  display: inline-block;
+  height: 600px;
+  width: 400px;
+  border: 5px solid black;
+  margin: 40px 30px 0 30px;
+  vertical-align: top;
+}*/
 
 /**
 /*  Connections Component Styling
 **/
 
-#connectionsViewContainer {
-}
-
-#connectionsView {
+#connectionsView, #pendingConnectionsView {
   display: block;
   border: 2px solid black;
   width: 25%;
@@ -124,9 +133,6 @@
 
 #connectionsView tr, #connectionsView th, #connectionsView td {
   display: block;
-}
-
-#connectionsHeader {
 }
 
 table {

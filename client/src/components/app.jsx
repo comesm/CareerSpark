@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import User from './User.jsx';
 import UserEntryView from './UserEntryView.jsx';
 import Nav from './Nav.jsx';
+import PendingConnectionsView from './PendingConnectionsView.jsx';
 import $ from 'jquery';
 import mockData from '../mockData.js';
 
@@ -69,6 +70,8 @@ export default class App extends React.Component {
       <div>
         <Header />
         <Nav />
+
+        <PendingConnectionsView />
 
         {dataFetched ? <UserEntryView user={this.state} />: ''}
         <button onClick={()=>{console.log(this.state)}}>console log state</button>

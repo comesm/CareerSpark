@@ -13,7 +13,7 @@ export default class PendingConnectionsView extends React.Component {
 
   render() {
   	var contactList = dummyData.map((node, idx) => (
-	    <ConnectionsViewEntry node={node} key={idx} />
+	    <PendingConnectionsViewEntry node={node} key={idx} />
 	  ))
 
   	/*
@@ -28,10 +28,10 @@ export default class PendingConnectionsView extends React.Component {
    //  }
 
   	return (
-  	  <div id="connectionsViewContainer">
-        <table id="connectionsView">
+  	  <div>
+        <table id="pendingConnectionsView">
           <tr>
-        	<th id="connectionsHeader">Connections</th>
+        	  <th id="pendingConnectionsHeader">Pending Connections</th>
           </tr>
           {contactList}
         </table>
