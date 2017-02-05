@@ -7,6 +7,7 @@ import About from './About.jsx';
 import NewUser from './NewUser.jsx';
 import Profile from './Profile.jsx';
 import SignUp from './Signup.jsx';
+import Login from './Login.jsx';
 
 // render(
 //   <SignUp />
@@ -36,5 +37,7 @@ render(
     <Route path="/about" component={About} />
     <Route path="/profile" component={Profile} />
     <Route path="/signup" component={SignUp} />
+    <Route path="/login" component={Login} />
+
   </Router>)
 , document.getElementById('app'));

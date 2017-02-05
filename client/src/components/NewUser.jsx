@@ -7,7 +7,6 @@ const _cloudinaryUploadPreset = 'profileImage'
 // Cloudinary API for documentation: http://cloudinary.com/blog/restful_api_for_managing_your_website_s_images_and_other_online_assets
 const _cloudinaryUploadUrl = 'https://api.cloudinary.com/v1_1/baggins/upload'
 
-
 export default class NewUser extends React.Component {
   constructor(props) {
   	super(props);
@@ -34,19 +33,6 @@ export default class NewUser extends React.Component {
 		//request to server here
     event.preventDefault();
     console.log('Submit button clicked: ' + this.state.firstName);
-    alert('firstName: ', this.state.firstName, '\n',
-	    'lastName: ', this.state.lastName, '\n',
-			'phone: ',  this.state.phone,  '\n',
-			'location: ', this.state.location,  '\n',
-			'company: ', this.state.company,  '\n',
-			'field: ', this.state.field,  '\n',
-			'tagline: ', this.state.tagline,  '\n',
-			'username: ', this.state.username,  '\n',
-			'profileImageUrl: ', this.state.profileImageUrl, '\n',
-			'password: ', this.state.password
-      );
-
-
     $.ajax({
       url: 'http://localhost:3000/api/users/',
       method: "POST",
