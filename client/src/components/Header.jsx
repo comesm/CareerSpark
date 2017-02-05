@@ -1,5 +1,4 @@
 import React from 'react'
-{/*import Nav from './Nav.jsx';*/}
 
 export default class Header extends React.Component {
   render() {
@@ -19,7 +18,6 @@ export default class Header extends React.Component {
               </img>
             </h2>
           </div>
-          {/*<Nav />*/}
         </header>
       </div>
     )
