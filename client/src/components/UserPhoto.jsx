@@ -3,7 +3,6 @@ import React from 'react';
 export default class UserPhoto extends React.Component {
   constructor(props) {
     super(props);
-    console.log('6', props);
   }
 
   render() {

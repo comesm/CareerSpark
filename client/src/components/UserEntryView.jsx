@@ -19,7 +19,6 @@ export default class UserEntryView extends React.Component {
   }
 
   clickYes() {
-    console.log('before yes current', this.state.current);
     var currUser = this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
 
@@ -34,29 +33,27 @@ export default class UserEntryView extends React.Component {
        //accept incoming connections
        this.props.user.acceptedConnections.push(currUser);
 
-      if(this.props.user.pendingConnectionsIncoming.length === 1) {
-        this.setState({currentList: this.props.user.suggestedConnections});
+      if(this.props.user.pendingConnectionsIncoming.length === 0) {
+        this.setState({currentList: this.props.user.suggestedConnections,
+          current: this.props.user.suggestedConnections[0]});
       }
     }
-        console.log('after yes current', this.state.current);
-
   }
 
   clickNo() {
-    console.log('before no current', this.state.current);
+
     this.state.currentList.shift();
     this.setState({current: this.state.currentList[0]});
 
-    if(this.props.user.pendingConnectionsIncoming.length === 1) {
-        this.setState({currentList: this.props.user.suggestedConnections});
+    if(this.props.user.pendingConnectionsIncoming.length === 0) {
+        this.setState({currentList: this.props.user.suggestedConnections,
+          current: this.props.user.suggestedConnections[0]
+          });
     }
-
-
-    console.log('after no current', this.state.current);
-
   }
 
   render() {
+    console.log('54', this.props.user);
     return (
             <div>
         <img src="./images/red-x.png"

@@ -24,8 +24,6 @@ export default class App extends React.Component {
     var context = this;
     // this callback will take the data returned from the GET request, and setState with it.
     var callback = function(data) {
-      console.log('25', data);
-      console.log('GET request successful');
       context.setState({
         user: data.user,
         acceptedConnections: mockData.acceptedConnections,
@@ -66,7 +64,6 @@ export default class App extends React.Component {
     console.log('mockData:',mockData);
 
     var dataFetched = this.state.dataFetched;
-    console.log('dataFetched: ',this.state.dataFetched);
     return (
       <div>
         <Header />
