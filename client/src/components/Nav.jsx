@@ -30,6 +30,12 @@ export default class Nav extends React.Component {
                 activeClassName="active">SignUp
           </Link>
         </li>
+        <li>
+          <Link to="/Login"
+                style={{"textDecoration":"none"}}
+                activeClassName="active">Login
+          </Link>
+        </li>
       </ul>
     )
   }
