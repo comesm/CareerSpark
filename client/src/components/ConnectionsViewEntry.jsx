@@ -8,7 +8,7 @@ export default class ConnectionsViewEntry extends React.Component {
   render() {
   	return (
   	  <tr>
-  	    <td className="connectionsViewEntry tooltip">
+  	    <td className="tooltip">
   	      {this.props.node.username}
   	      <p className="tooltiptext">
   	        {this.props.node.firstName} {this.props.node.lastName}<br />
