@@ -76,10 +76,46 @@
   text-align: center;
 }
 
-#pendingConnectionsHeader {
-  margin-left: auto;
+#pendingConnectionsView tr {
+  border-bottom: 1px solid black;
 }
 
+#pendingConnectionsView td {
+  padding: 0;
+}
+
+#pendingConnectionsHeader {
+  margin-left: auto;
+  font-size: 28px;
+}
+
+.pendingRow {
+  height: 300px;
+}
+
+.username {
+  margin: 0 0 0 200px;
+  padding: 5px 0 5px 0;
+  border-bottom: 1px solid black;
+  font: 20px Arial;
+}
+
+.pendingUser {
+
+}
+
+/*.pendingPhoto {
+
+}*/
+
+.pendingInfo {
+  text-align: left;
+  margin-left: 50%;
+  width: 50%;
+}
+
+
+/* */
 .red-x {
   margin-left: 26%;
 }
@@ -143,6 +179,8 @@ th {
   font-size: 20px;
   margin-left: -200px;
   border-bottom: 1px solid black;
+  font-size: 28px;
+  margin-left: auto;
 }
 
 td {

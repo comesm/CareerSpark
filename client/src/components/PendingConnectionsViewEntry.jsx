@@ -7,17 +7,19 @@ export default class PendingConnectionsViewEntry extends React.Component {
 
   render() {
   	return (
-  	  <tr>
-  	    <td className="pendingConnectionsViewEntry tooltip">
-  	      {this.props.node.username}
-  	      <p className="tooltiptext">
-  	        {this.props.node.firstName} {this.props.node.lastName}<br />
-			      {this.props.node.phone}<br />
-			      {this.props.node.location}<br />
-			      Employer: {this.props.node.company}<br />
-			      Field: {this.props.node.field}<br />
-			      Tagline: {this.props.node.tagline}
-  	      </p>
+  	  <tr className="pendingRow">
+  	    <td className="pendingConnectionsViewEntry">
+  	      <div className="username">{this.props.node.username}</div>
+          <section className="pendingUser">
+  	        <p className="pendingInfo">
+  	          {this.props.node.firstName} {this.props.node.lastName}<br />
+			        {this.props.node.phone}<br />
+			        {this.props.node.location}<br />
+			        Employer: {this.props.node.company}<br />
+			        Field: {this.props.node.field}<br />
+			        Tagline: {this.props.node.tagline}
+  	        </p>
+          </section>
   	    </td>
   	  </tr>
   	)
