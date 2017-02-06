@@ -78,6 +78,7 @@ export default class App extends React.Component {
        {dataFetched ? <PendingConnectionsView users={this.state.pendingConnectionsIncoming} /> : ''}
        {dataFetched ? <SuggestedConnectionsView users={this.state.suggestedConnections} /> : ''}
 
+
         {/*{dataFetched ? <SuggestedConnectionsView user={this.state} />: ''}
 
         {console.log('this.state.dataFetched: ', this.state.dataFetched)}*/}
