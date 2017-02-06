@@ -31,7 +31,6 @@ DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented ou
 //   </Router>)
 // , document.getElementById('app'));
 render(
-
   <Router history={browserHistory}>
     <Route path="/" component={App} />
     <Route path="/newuser" component={NewUser} />
@@ -41,4 +40,5 @@ render(
     <Route path="/login" component={Login} />
   </Router>
 
+  )
 , document.getElementById('app'));
