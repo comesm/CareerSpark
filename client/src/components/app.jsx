@@ -59,11 +59,6 @@ export default class App extends React.Component {
     })
   }
 
-  handleUserConnection() {
-    //TO DO NEXT
-  }
-
-
   // Dev Note: right now, we are hardwireing User1 as user to get on mount
   componentDidMount() {
     console.log('70 componenet did mod')
@@ -77,10 +72,10 @@ export default class App extends React.Component {
     var dataFetched = this.state.dataFetched;
     return (
       <div>
+        <button onClick={()=>{console.log(this.state)}}>console log state</button>
         <Header />
         <Nav />
-
-       {dataFetched ? <PendingConnectionsView users={this.state.pendingConnectionsOutgoing} /> : ''}
+       {dataFetched ? <PendingConnectionsView users={this.state.pendingConnectionsIncoming} /> : ''}
        {dataFetched ? <SuggestedConnectionsView users={this.state.suggestedConnections} /> : ''}
 
 
@@ -92,6 +87,7 @@ export default class App extends React.Component {
     )
   }
 }
+
 
   /********
 
