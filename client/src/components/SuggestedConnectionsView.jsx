@@ -6,10 +6,10 @@ export default class SuggestedConnectionsView extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       currentList: this.props.users,
-      current: this.props.users[0]
+      current: this.props.users[0] || {}
       // post data-persisting state object variables
       //   current: this.props.user.pendingConnectionsIncoming[0],
       //   currentList: this.props.user.pendingConnectionsIncoming}
@@ -19,6 +19,7 @@ export default class SuggestedConnectionsView extends React.Component {
       //   acceptedConnections: [],
       //   suggestedConnections: [],
     }
+    console.log('22', this.props);
   }
 
   handleReject() {
@@ -74,7 +75,7 @@ export default class SuggestedConnectionsView extends React.Component {
           <tr>
             <td>
               <a href="#">
-                <img 
+                <img
                   src="./images/red-x.png"
                   alt="click to reject"
                   className="suggestedReject"
@@ -90,7 +91,7 @@ export default class SuggestedConnectionsView extends React.Component {
             </td>
             <td>
               <a href="#">
-                <img 
+                <img
                   src="./images/green-check.png"
                   alt="click to approve"
                   className="suggestedApprove"
