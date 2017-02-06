@@ -72,9 +72,10 @@ export default class App extends React.Component {
     var dataFetched = this.state.dataFetched;
     return (
       <div>
+        <button onClick={()=>{console.log(this.state)}}>console log state</button>
         <Header />
         <Nav />
-       {dataFetched ? <PendingConnectionsView users={this.state.pendingConnectionsOutgoing} /> : ''}
+       {dataFetched ? <PendingConnectionsView users={this.state.pendingConnectionsIncoming} /> : ''}
        {dataFetched ? <SuggestedConnectionsView users={this.state.suggestedConnections} /> : ''}
 
         {/*{dataFetched ? <SuggestedConnectionsView user={this.state} />: ''}
@@ -85,6 +86,7 @@ export default class App extends React.Component {
     )
   }
 }
+
 
   /********
 
