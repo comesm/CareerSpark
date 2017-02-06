@@ -49,6 +49,22 @@ View the project roadmap [here](##Issues)
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ##Issues
+                 React Component Tree:        html
+                           |
+                           index -> react-router module
+                             |
+                   Login - Signup - App - Profile - About
+                     |       |       |     |      |
+                 LoginApp  NewUser   |     |  Header - Nav
+                                 |       |
+                                 |     Header - Nav - ConnectionsView
+                                 |               |
+                                 |           ConnectionsViewEntry
+                                 |
+               Header - Nav - PendingConnectionsView - SuggestedConnectionsView
+                             |
+                      PendingConnectionsViewEntry
+
 The project root element is index.jsx which sets up our router for navigating between pages on our website
 
 Page 'newuser' allows users to add their profile information to a mysql relational database
