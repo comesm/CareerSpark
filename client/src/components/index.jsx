@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Route, Router, browserHistory } from 'react-router';
+import { Provider } from 'react-redux'
 import App from './App.jsx';
 import About from './About.jsx';
 // import Login from './Login.jsx';
@@ -31,6 +32,7 @@ DEV NOTE: Until ReactRouter is complete, work on SignUp by swapping commented ou
 // , document.getElementById('app'));
 render(
 (
+  <Provider store={store}>
   <Router history={browserHistory}>
     <Route path="/" component={App} />
     <Route path="/newuser" component={NewUser} />
@@ -38,6 +40,7 @@ render(
     <Route path="/profile" component={Profile} />
     <Route path="/signup" component={SignUp} />
     <Route path="/login" component={Login} />
-
-  </Router>)
+  </Router>
+ </Provider>
+  )
 , document.getElementById('app'));
