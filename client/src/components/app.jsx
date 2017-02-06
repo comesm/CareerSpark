@@ -25,10 +25,11 @@ export default class App extends React.Component {
     var context = this;
     // this callback will take the data returned from the GET request, and setState with it.
     var callback = function(data) {
-      console.log('GET request successful');
+      data.dataFetched = true;
       context.setState(data);
+      };
 
-    };
+    //};
     // makes request to our server, and sets state through the callback
     $.ajax({
       url: 'http://localhost:3000/api/users/' + userId,
@@ -52,7 +53,7 @@ export default class App extends React.Component {
       data: {
         sourceUserId: sourceUserId,
         targetUserId: targetUserId
-      }
+      },
       success: callback,
       error: () => console.error('database error')
     })
@@ -65,14 +66,13 @@ export default class App extends React.Component {
 
   // Dev Note: right now, we are hardwireing User1 as user to get on mount
   componentDidMount() {
+    console.log('70 componenet did mod')
     this.getUserInfo(1)
   }
 
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
 
   render() {
-    console.log('app/index view this.props:',this.props);
-    console.log('mockData:',mockData);
 
     var dataFetched = this.state.dataFetched;
     return (
@@ -80,9 +80,12 @@ export default class App extends React.Component {
         <Header />
         <Nav />
 
-        <PendingConnectionsView users={this.state.pendingConnectionsOutgoing} />
-        <SuggestedConnectionsView users={this.state.suggestedConnections} />
+       {dataFetched ? <PendingConnectionsView users={this.state.pendingConnectionsOutgoing} /> : ''}
+       {dataFetched ? <SuggestedConnectionsView users={this.state.suggestedConnections} /> : ''}
+
+
         {/*{dataFetched ? <SuggestedConnectionsView user={this.state} />: ''}
+
         {console.log('this.state.dataFetched: ', this.state.dataFetched)}*/}
         {/*<button onClick={()=>{console.log(this.state)}}>console log state</button>*/}
       </div>

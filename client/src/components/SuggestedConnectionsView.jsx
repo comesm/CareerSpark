@@ -9,7 +9,7 @@ export default class SuggestedConnectionsView extends React.Component {
 
     this.state = {
       currentList: this.props.users,
-      current: this.props.users[0]
+      current: this.props.users[0] || {}
       // post data-persisting state object variables
       //   current: this.props.user.pendingConnectionsIncoming[0],
       //   currentList: this.props.user.pendingConnectionsIncoming}
@@ -51,7 +51,7 @@ export default class SuggestedConnectionsView extends React.Component {
 
   handleAccept() {
     this.setState({'currentList': this.state.currentList.slice(1)});
-    this.setState({current: this.state.currentList[0]}, function() {console.log('53', this.state.current)});
+    this.setState({current: this.state.currentList[0]});
   }
 
   // clickNo() {
@@ -85,7 +85,7 @@ export default class SuggestedConnectionsView extends React.Component {
             </td>
             <td>
               <img
-                src={'this.state.current.profileImageUrl'}
+                src={this.state.current.profileImageUrl}
                 className="suggestedImage"
               />
             </td>
