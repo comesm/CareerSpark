@@ -1,9 +1,11 @@
 import React from 'react';
 import Header from './Header.jsx';
 import User from './User.jsx';
-import UserEntryView from './UserEntryView.jsx'
+import UserEntryView from './UserEntryView.jsx';
+import Nav from './Nav.jsx';
+import PendingConnectionsView from './PendingConnectionsView.jsx';
 import $ from 'jquery';
-import mockData from '../mockData.js'
+import mockData from '../mockData.js';
 
 
 export default class App extends React.Component {
@@ -60,11 +62,16 @@ export default class App extends React.Component {
   // Dev Note: The "show state" button below can be used for debugging. Should be removed at some point.
 
   render() {
+    console.log('app/index view this.props:',this.props);
+    console.log('mockData:',mockData);
 
     var dataFetched = this.state.dataFetched;
     return (
       <div>
         <Header />
+        <Nav />
+
+        <PendingConnectionsView users={mockData.pendingConnectionsIncoming} />
 
         {dataFetched ? <UserEntryView user={this.state} />: ''}
         <button onClick={()=>{console.log(this.state)}}>console log state</button>

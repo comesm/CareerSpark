@@ -67,18 +67,120 @@
   width: 150px;
 }
 
+/**
+/*  PendingConnectionsView Component Styling (inside '/' view)
+**/
+
+#pendingConnectionsView tr, #pendingConnectionsView th, #pendingConnectionsView td {
+  display: block;
+  text-align: center;
+}
+
+#pendingConnectionsView tr {
+  border-bottom: 1px solid black;
+}
+
+tr .lowertooltip:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#pendingConnectionsView td {
+  padding: 0;
+}
+
+#pendingConnectionsHeader {
+  margin-left: auto;
+  font-size: 28px;
+}
+
+.pendingUsername {
+  /*margin: 0 0 0 200px;*/
+  text-align: center;
+  margin-left: 200px;
+  padding: 5px 0 5px 0;
+  /*border-bottom: 1px solid black;*/
+  font: 20px Arial;
+}
+
+.pendingReject {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  bottom: 85px;
+  left: 180px;
+}
+
+.pendingPhoto {
+  height: 225px;
+  width: 175px;
+  margin: 0 0 0 200px;
+}
+
+.pendingApprove {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  margin-bottom: 85px;
+}
+
+/**
+/*  PendingConnectionsViewEntry Tooltip Styling
+**/
+
+.lowertooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* tool-tip box */
+.lowertooltip .lowertooltiptext {
+  visibility: hidden;
+  width: 218px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 67%;
+  left: 58%;
+  margin-left: -60px;
+}
+
+/* tooltip-left arrow */
+.lowertooltip .lowertooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.lowertooltip:hover .lowertooltiptext {
+  visibility: visible;
+}
+
+.lowertooltip .lowertooltiptext {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.lowertooltip:hover .lowertooltiptext {
+  opacity: 1;
+}
+
+/**
+/*  UserEntryView Styling
+**/
+
 .red-x {
   margin-left: 26%;
 }
 
-#profile-component {
-  display: inline-block;
-  height: 600px;
-  width: 400px;
-  border: 5px solid black;
-  margin: 40px 30px 0 30px;
-  vertical-align: top;
-}
 
 #user-summary {
   text-align: center;
@@ -110,10 +212,7 @@
 /*  Connections Component Styling
 **/
 
-#connectionsViewContainer {
-}
-
-#connectionsView {
+#connectionsView, #pendingConnectionsView {
   display: block;
   border: 2px solid black;
   width: 25%;
@@ -126,9 +225,6 @@
   display: block;
 }
 
-#connectionsHeader {
-}
-
 table {
   border-collapse: collapse;
 }
@@ -137,6 +233,8 @@ th {
   font-size: 20px;
   margin-left: -200px;
   border-bottom: 1px solid black;
+  font-size: 28px;
+  margin-left: auto;
 }
 
 td {
@@ -146,46 +244,55 @@ td {
   font-size: 16px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even) .tooltip {
   background-color: #dddddd;
 }
 
 /**
-/*  Hovering Tooltip Styling
+/*  ConnectionsViewEntry Tooltip Styling
 **/
 
 .tooltip {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 /* tool-tip box */
 .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 218px;
-    height: auto;
-    background-color: black;
-    color: #fff;
-    text-align: left;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: -45%;
-    left: 61%;
+  visibility: hidden;
+  width: 218px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -45%;
+  left: 61%;
 }
 
 /* tooltip-left arrow */
 .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 10%;
-    right: 100%;
-    margin-top: -5px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent black transparent transparent;
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
 }
+
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+  visibility: visible;
+}
+
+.tooltip .tooltiptext {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1;
 }
