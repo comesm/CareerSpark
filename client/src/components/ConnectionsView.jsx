@@ -15,7 +15,6 @@ export default class ConnectionsView extends React.Component {
   	var contactList = mockData.acceptedConnections.map((user, idx) => (
 	    <ConnectionsViewEntry user={user} key={idx} />
 	  ))
-
   	return (
   	  <div>
         <table id="connectionsView">

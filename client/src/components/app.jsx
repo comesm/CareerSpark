@@ -27,6 +27,7 @@ export default class App extends React.Component {
     var callback = function(data) {
       console.log('GET request successful');
       context.setState(data);
+
     };
     // makes request to our server, and sets state through the callback
     $.ajax({
@@ -79,13 +80,12 @@ export default class App extends React.Component {
         <Header />
         <Nav />
 
-        <PendingConnectionsView users={mockData.pendingConnectionsIncoming} />
-        <SuggestedConnectionsView users={mockData.suggestedConnections} />
-        {/* //uses ajax to check if data was received */}
+        <PendingConnectionsView users={this.state.pendingConnectionsOutgoing} />
+        <SuggestedConnectionsView users={this.state.suggestedConnections} />
         {/*{dataFetched ? <SuggestedConnectionsView user={this.state} />: ''}
         {console.log('this.state.dataFetched: ', this.state.dataFetched)}*/}
         {/*<button onClick={()=>{console.log(this.state)}}>console log state</button>*/}
-      </div> 
+      </div>
     )
   }
 }

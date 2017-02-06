@@ -6,7 +6,7 @@ export default class SuggestedConnectionsView extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       currentList: this.props.users,
       current: this.props.users[0]
@@ -19,6 +19,7 @@ export default class SuggestedConnectionsView extends React.Component {
       //   acceptedConnections: [],
       //   suggestedConnections: [],
     }
+    console.log('22', this.props);
   }
 
   handleReject() {
@@ -50,7 +51,7 @@ export default class SuggestedConnectionsView extends React.Component {
 
   handleAccept() {
     this.setState({'currentList': this.state.currentList.slice(1)});
-    this.setState({current: this.state.currentList[0]});
+    this.setState({current: this.state.currentList[0]}, function() {console.log('53', this.state.current)});
   }
 
   // clickNo() {
@@ -74,7 +75,7 @@ export default class SuggestedConnectionsView extends React.Component {
           <tr>
             <td>
               <a href="#">
-                <img 
+                <img
                   src="./images/red-x.png"
                   alt="click to reject"
                   className="suggestedReject"
@@ -84,13 +85,13 @@ export default class SuggestedConnectionsView extends React.Component {
             </td>
             <td>
               <img
-                src={this.state.current.profileImageUrl}
+                src={'this.state.current.profileImageUrl'}
                 className="suggestedImage"
               />
             </td>
             <td>
               <a href="#">
-                <img 
+                <img
                   src="./images/green-check.png"
                   alt="click to approve"
                   className="suggestedApprove"
