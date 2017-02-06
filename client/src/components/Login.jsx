@@ -1,9 +1,9 @@
 import React from 'react';
-import NewUser from './NewUser.jsx';
 import Header from './Header.jsx';
 import Nav from './Nav.jsx';
+import LoginApp from './LoginApp.jsx';
 
-export default class SignUp extends React.Component {
+export default class Login extends React.Component {
   constructor(props) {
   	super(props);
   }
@@ -12,7 +12,7 @@ export default class SignUp extends React.Component {
     return (
   	  <div>
         <Header />
-        <NewUser />
+        <LoginApp />
       </div>
     )
   }
