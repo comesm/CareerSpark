@@ -71,7 +71,7 @@ export default class App extends React.Component {
         <Header />
         <Nav />
 
-        <PendingConnectionsView />
+        <PendingConnectionsView users={mockData.pendingConnectionsIncoming} />
 
         {dataFetched ? <UserEntryView user={this.state} />: ''}
         <button onClick={()=>{console.log(this.state)}}>console log state</button>

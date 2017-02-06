@@ -80,6 +80,10 @@
   border-bottom: 1px solid black;
 }
 
+tr .lowertooltip:nth-child(even) {
+  background-color: #dddddd;
+}
+
 #pendingConnectionsView td {
   padding: 0;
 }
@@ -89,20 +93,35 @@
   font-size: 28px;
 }
 
-.pendingRow {
-  height: 300px;
-}
-
 .pendingUsername {
-  margin: 0 0 0 200px;
+  /*margin: 0 0 0 200px;*/
+  text-align: center;
+  margin-left: 200px;
   padding: 5px 0 5px 0;
-  border-bottom: 1px solid black;
+  /*border-bottom: 1px solid black;*/
   font: 20px Arial;
 }
 
-/*.pendingPhoto {
+.pendingReject {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  bottom: 85px;
+  left: 180px;
+}
 
-}*/
+.pendingPhoto {
+  height: 225px;
+  width: 175px;
+  margin: 0 0 0 200px;
+}
+
+.pendingApprove {
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  margin-bottom: 85px;
+}
 
 /**
 /*  PendingConnectionsViewEntry Tooltip Styling
@@ -124,7 +143,7 @@
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  top: 60%;
+  top: 67%;
   left: 58%;
   margin-left: -60px;
 }
@@ -225,7 +244,7 @@ td {
   font-size: 16px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even) .tooltip {
   background-color: #dddddd;
 }
 

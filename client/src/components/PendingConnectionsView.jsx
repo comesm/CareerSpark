@@ -12,20 +12,9 @@ export default class PendingConnectionsView extends React.Component {
   }
 
   render() {
-  	var contactList = dummyData.map((node, idx) => (
-	    <PendingConnectionsViewEntry node={node} key={idx} />
+  	var contactList = this.props.users.map((user, idx) => (
+	    <PendingConnectionsViewEntry user={user} key={idx} />
 	  ))
-
-  	/*
-  	 * Once props data is available, swap out above the above dummy-data setup for below
-  	 */
-
-  	//if contact list exists and isn't 0, format the entries
-  	// if (this.props.contacts && this.props.node.children.length > 0) {
-	  // var contactList = this.props.contacts.map((child, idx) => {
-	  // 	<ConnectionsViewEntry node={child} key={idx} />
-	  // })
-   //  }
 
   	return (
   	  <div>
