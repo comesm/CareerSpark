@@ -1,6 +1,6 @@
 # CareerSpark
 
-> Match with Like-minded career professionals in your immediate area!
+> Meet up and network with professionals on the fly.
 
 ## Team
 
