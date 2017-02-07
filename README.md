@@ -1,7 +1,7 @@
 # CareerSpark
 
 
-> Meet up and network with professionals on the fly
+> Meet up and network with professionals on the fly.
 
 ## Team
 
