@@ -2,6 +2,7 @@ import React from 'react';
 import dummyData from './dummyConnections.js';
 import PendingConnectionsViewEntry from './PendingConnectionsViewEntry.jsx';
 
+
 export default class PendingConnectionsView extends React.Component {
   constructor(props) {
   	super(props);
@@ -11,6 +12,8 @@ export default class PendingConnectionsView extends React.Component {
   	}
   }
 
+  //Iterate through our list of connections and
+  //render into PendingConnectionsViewEntry components
   render() {
   	var contactList = this.props.users.map((user, idx) => (
 	    <PendingConnectionsViewEntry user={user} key={idx} />

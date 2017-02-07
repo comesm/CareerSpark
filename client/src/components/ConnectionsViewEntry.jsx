@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+//this is our ConnectionsViewEntry which renders each connection as
+//an entry in our table
 export default class ConnectionsViewEntry extends React.Component {
   constructor(props) {
   	super(props);

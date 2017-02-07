@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 export default class Nav extends React.Component {
   render() {
 
+    //Navbar with route-matching to enable user to
+    //navigate through pages on our site.
     return (
       <ul id="nav">
         <li>

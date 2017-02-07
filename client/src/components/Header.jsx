@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+//Our header with title
 export default class Header extends React.Component {
   render() {
     return (
@@ -11,7 +13,7 @@ export default class Header extends React.Component {
           <div>
             <h2 id="sub-header">
               <span id="Supercharge">Supercharge </span>
-              Your Professional Network 
+              Your Professional Network
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Harry_Potter_Lightning.svg/1000px-Harry_Potter_Lightning.svg.png"
                    alt="lightning bolt"
                    id="lightningBolt">
